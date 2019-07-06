@@ -2,19 +2,24 @@
 <ruleset name="WordPress Coding Standards for Plugins">
 	<description>Generally-applicable sniffs for WordPress plugins</description>
 
-	<rule ref="WordPress-Core">
-		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
-		<exclude name="WordPress.NamingConventions.ValidHookName.UseUnderscores"/>
-	</rule>
+	<rule ref="PHPCompatibility"/>
+	<config name="testVersion" value="5.4-"/>
+
+	<rule ref="WordPress-Core" />
 	<rule ref="WordPress-Docs" />
 
 	<!-- Check all PHP files in directory tree by default. -->
 	<arg name="extensions" value="php"/>
 	<file>.</file>
+	<rule ref="WordPress.Files.FileName">
+        <properties>
+            <property name="strict_class_file_names" value="false" />
+        </properties>
+    </rule>
 
 	<!-- Show sniff codes in all reports -->
 	<arg value="s"/>
 
+	<!-- Excluded sniff codes in following directories -->
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
-	<exclude-pattern>*/vendor/*</exclude-pattern>
 </ruleset>

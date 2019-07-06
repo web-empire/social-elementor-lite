@@ -1,5 +1,5 @@
 {
-  "name": "social-elementor",
+  "name": "social-elementor-lite",
   "version": "1.0.0",
   "description": "Social & Blog Posts Addons is a premium extension for Elementor that adds 25+ widgets and works on top of any Elementor Package (Free, Pro). You can use it with any WordPress theme.",
   "main": "Gruntfile.js",
@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "gitlab.com/webempire/social-elementor"
+    "url": "gitlab.com/webempire/social-elementor-lite"
   },
   "author": "WebEmpire",
   "license": "ISC"
