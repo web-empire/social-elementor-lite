@@ -7,6 +7,41 @@ module.exports = function(grunt) {
 
 		pkg: grunt.file.readJSON( 'package.json' ),
 
+		copy: {
+            main: {
+                options: {
+                    mode: true
+                },
+                src: [
+                    '**',
+                    '*.zip',
+                    '!node_modules/**',
+                    '!build/**',
+                    '!css/sourcemap/**',
+                    '!.git/**',
+                    '!bin/**',
+                    '!.gitlab-ci.yml',
+                    '!bin/**',
+                    '!tests/**',
+                    '!phpunit.xml.dist',
+                    '!*.sh',
+                    '!*.map',
+                    '!Gruntfile.js',
+                    '!package.json',
+                    '!.gitignore',
+                    '!phpunit.xml',
+                    '!README.md',
+                    '!sass/**',
+                    '!codesniffer.ruleset.xml',
+                    '!vendor/**',
+                    '!composer.json',
+                    '!composer.lock',
+                    '!package-lock.json',
+                    '!phpcs.xml.dist',
+                ],
+                dest: 'social-elementor-lite/'
+            }
+        },
 		uglify: {
 			js: {
 				files: [
@@ -88,30 +123,6 @@ module.exports = function(grunt) {
 	            ]
 	        }
 	    },
-		copy: {
-			main: {
-				options: {
-					mode: true
-				},
-				src: [
-				'**',
-				'!node_modules/**',
-				'!.git/**',
-				'!*.sh',
-				'!*.zip',
-				'!Gruntfile.js',
-				'!package.json',
-                '!package-lock.json',
-				'!.gitignore',
-				'!Optimization.txt',
-				'!composer.json',
-				'!composer.lock',
-				'!phpcs.xml.dist',
-				'!vendor/'
-				],
-				dest: 'social-elementor-lite/'
-			}
-		},
 		compress: {
 			main: {
 				options: {
@@ -173,7 +184,14 @@ module.exports = function(grunt) {
                     src: ['*.php', '**/*.php', '!node_modules/**', '!php-tests/**', '!bin/**']
                 }
             }
-        },
+		},
+		wp_readme_to_markdown: {
+			your_target: {
+				files: {
+					"README.md": "readme.txt"
+				}
+			},
+		},
         bumpup: {
 			options: {
 				updateProps: {
@@ -235,6 +253,12 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks( 'grunt-rtlcss' );
 	grunt.loadNpmTasks( 'grunt-postcss' );
+
+	/* Read File Generation task */
+    grunt.loadNpmTasks("grunt-wp-readme-to-markdown");
+    
+    // Generate Read me file
+	grunt.registerTask( "readme", ["wp_readme_to_markdown"] );
 
 	/* Version Bump Task */
 	grunt.loadNpmTasks( 'grunt-bumpup' );
