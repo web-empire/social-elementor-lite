@@ -1,0 +1,68 @@
+@font-face {
+	font-family: 'social';
+	src:  url('../fonts/social.eot?ejqak3');
+	src:  url('../fonts/social.eot?ejqak3#iefix') format('embedded-opentype'),
+		url('../fonts/social.ttf?ejqak3') format('truetype'),
+		url('../fonts/social.woff?ejqak3') format('woff'),
+		url('../fonts/social.svg?ejqak3#social') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="social-icon-"], [class*=" social-icon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'social' !important;
+	color: #8141bb;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+#elementor-panel-category-social-elements .title,
+#elementor-panel-category-social-elements .icon i {
+    color: #8141bb !important;
+}
+
+.elementor-element {
+	position: relative;
+}
+
+/* .elementor-element [class*="social-icon-"]:after {
+	background: url(../../admin/assets/images/Siteicon.png) no-repeat center;
+	content: "" !important;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	color: #a4afb7;
+	padding: 0.2em 0.5em;
+	border-width: 0 0 1px 1px;
+	border-color: #e0e0e0;
+	border-style: solid;
+} */
+
+.social-icon-post-grid:before {
+	content: "\e915";
+}
+
+.elementor-panel .elementor-panel-alert a {
+	color: #B7084E;
+}
+
+.social-elementor-ref-editor {
+	font-size: 11px;
+	font-style: italic;
+	line-height: 1.4;
+	color: #a4afb7;
+}
+
+.elementor-control-raw-html.social-elementor-ref-editor {
+	word-break: break-word;
+}

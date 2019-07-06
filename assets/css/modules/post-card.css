@@ -1,0 +1,30 @@
+.elementor-element[data-widget_type="social-blog-posts.card"] .social-blog-post-content-wrapper {
+	margin: 0 auto;
+}
+
+.elementor-element[data-widget_type="social-blog-posts.card"] .social-blog-post-inner-wrapper {
+	display: inline-block;
+	width: 100%;
+}
+
+.elementor-element[data-widget_type="social-blog-posts.card"] .social-blog-post-thumbnail,
+.elementor-element[data-widget_type="social-blog-posts.card"] .social-blog-post-content-wrapper {
+	position: relative;
+}
+
+.elementor-element[data-widget_type="social-blog-posts.card"].social-blog-post-separator-left .social-blog-post-separator {
+	margin-right: auto;
+}
+
+.elementor-element[data-widget_type="social-blog-posts.card"].social-blog-post-separator-right .social-blog-post-separator {
+	margin-left: auto;
+}
+
+.elementor-element[data-widget_type="social-blog-posts.card"].social-blog-post-separator-center .social-blog-post-separator {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.elementor-element[data-widget_type="social-blog-posts.card"].social-blog-post-link-complete-yes .social-blog-post-complete-box-overlay {
+	z-index: 2;
+}
