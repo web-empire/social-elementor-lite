@@ -72,7 +72,7 @@ if ( ! class_exists( 'Social_Elementor_Loader' ) ) {
 			define( 'SOCIAL_ELEMENTOR_ROOT', dirname( SOCIAL_ELEMENTOR_BASE ) );
 			define( 'SOCIAL_ELEMENTOR_DIR', plugin_dir_path( SOCIAL_ELEMENTOR_FILE ) );
 			define( 'SOCIAL_ELEMENTOR_URL', plugins_url( '/', SOCIAL_ELEMENTOR_FILE ) );
-			define( 'SOCIAL_ELEMENTOR_VER', '1.0.0' );
+			define( 'SOCIAL_ELEMENTOR_VER', '1.0.1' );
 			define( 'SOCIAL_ELEMENTOR_MODULE_DIR', SOCIAL_ELEMENTOR_DIR . 'modules/' );
 			define( 'SOCIAL_ELEMENTOR_MODULE_URL', SOCIAL_ELEMENTOR_URL . 'modules/' );
 			define( 'SOCIAL_ELEMENTOR_SLUG', 'social-elementor' );
@@ -140,8 +140,8 @@ if ( ! class_exists( 'Social_Elementor_Loader' ) ) {
 
 			$site_icon = esc_url( SOCIAL_ELEMENTOR_URL . 'admin/assets/images/Siteicon.png' );
 			$site_icon_markup = '<img src="' . $site_icon . '" class="social-elementor-notice-icon" alt="WebEmpire" title="WebEmpire" >';
-			$message = sprintf( __( '%1$s Thanks for choosing Social Addon for Elementor plugin!!! %2$s %3$s', 'social-elementor' ), '<strong>', '</strong>', '<br/>' );
-			$message .= sprintf( __( 'Please install and activate the Elementor plugin, to explore the features of this plugin.', 'social-elementor' ), '<strong>', '</strong>' );
+			$message = sprintf( esc_html__( '%1$s Thanks for choosing Social Addon for Elementor plugin!!! %2$s %3$s', 'social-elementor' ), '<strong>', '</strong>', '<br/>' );
+			$message .= sprintf( esc_html__( 'Please install and activate the Elementor plugin, to explore the features of this plugin.', 'social-elementor' ), '<strong>', '</strong>' );
 
 			$plugin = 'elementor/elementor.php';
 
@@ -151,7 +151,7 @@ if ( ! class_exists( 'Social_Elementor_Loader' ) ) {
 				}
 
 				$action_url   = wp_nonce_url( 'plugins.php?action=activate&amp;plugin=' . $plugin . '&amp;plugin_status=all&amp;paged=1&amp;s', 'activate-plugin_' . $plugin );
-				$button_label = __( 'Activate Elementor Now', 'social-elementor' );
+				$button_label = esc_html__( 'Activate Elementor Now', 'social-elementor' );
 
 			} else {
 				if ( ! current_user_can( 'install_plugins' ) ) {
@@ -159,7 +159,7 @@ if ( ! class_exists( 'Social_Elementor_Loader' ) ) {
 				}
 
 				$action_url   = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=elementor' ), 'install-plugin_elementor' );
-				$button_label = __( 'Install Elementor', 'social-elementor' );
+				$button_label = esc_html__( 'Install Elementor', 'social-elementor' );
 			}
 
 			$button = '<span> <a href="' . $action_url . '" class="button-primary">' . $button_label . '</a></span>';

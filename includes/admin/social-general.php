@@ -9,9 +9,12 @@ use SocialElementor\Classes\Social_Helper;
 
 $widgets       = Social_Helper::get_widget_options();
 
-$kb_url = apply_filters( 'social_knowledge_base_link', '#' );
+$kb_url = apply_filters( 'social_knowledge_base_link', 'https://webempire.org.in/docs/?utm_source=google&utm_medium=social-post&utm_campaign=social-elementor-plugin' );
 
-$code_doc_url = apply_filters( 'social_code_snippets_link', '#' );
+$doc_url = apply_filters( 'social_blog_widget_linl', 'https://webempire.org.in/docs/blog-elementor-widget/?utm_source=google&utm_medium=social-post&utm_campaign=social-elementor-plugin' );
+
+$code_doc_url = apply_filters( 'social_code_snippets_link', 'https://webempire.org.in/docs/filters-actions-for-blog-elementor-widget/?utm_source=google&utm_medium=social-post&utm_campaign=social-elementor-plugin' );
+
 
 ?>
 
@@ -43,25 +46,15 @@ $code_doc_url = apply_filters( 'social_code_snippets_link', '#' );
 									$class = 'deactivate';
 									$link  = array(
 										'link_class' => 'social-activate-widget',
-										'link_text'  => __( 'Activate', 'social-elementor' ),
+										'link_text'  => esc_html__( 'Activate', 'social-elementor' ),
 									);
 
 									if ( $info['is_activate'] && ! $info['is_pro'] ) {
 										$class = 'activate';
 										$link  = array(
 											'link_class' => 'social-deactivate-widget',
-											'link_text'  => __( 'Deactivate', 'social-elementor' ),
+											'link_text'  => esc_html__( 'Deactivate', 'social-elementor' ),
 										);
-									}
-									switch ( $info['slug'] ) {
-										case 'social-white-label':
-											$class = $info['slug'];
-											$link  = array(
-												'link_class' => 'social-white-label-module',
-												'link_text'  => __( 'Settings', 'social-elementor' ),
-												'link_url'   => admin_url( 'options-general.php?page=' . SOCIAL_ELEMENTOR_SLUG . '&action=branding' ),
-											);
-											break;
 									}
 
 									$features = '';
@@ -80,11 +73,11 @@ $code_doc_url = apply_filters( 'social_code_snippets_link', '#' );
 
 									if ( $info['is_pro'] ) {
 
-										$pro_url = '#';
-										$pro_label = __( 'Releasing Soon!!!', 'social-elementor' );
+										$pro_url = 'http://codecanyon.net/item/social-addons-for-elementor-pro/24234889';
+										$pro_label = esc_html__( 'Get Pro', 'social-elementor' );
 
 										printf(
-											'<a href="%1$s" class="get-pro-social"> %2$s </a>',
+											'<a href="%1$s" target="_blank" class="get-pro-social"> %2$s </a>',
 											esc_url( $pro_url ),
 											esc_html( $pro_label )
 										);
@@ -107,8 +100,8 @@ $code_doc_url = apply_filters( 'social_code_snippets_link', '#' );
 										);
 									}
 
-									echo '</h3> <div class="social-widget-link-wrapper">' . $features . '';
-
+									echo '</h3> <div class="social-widget-link-wrapper"> <h4 class="see-all-features">' . esc_html__( 'See All Features »', 'social-elementor' ) . '</h4>';
+									echo wp_kses_post( $features );
 									echo '</div></li>';
 								}
 								?>
@@ -134,12 +127,12 @@ $code_doc_url = apply_filters( 'social_code_snippets_link', '#' );
 						<?php
 
 							$upcoming_widgets	= array (
-								'first'		=>	__( 'Twitter Posts', 'social-elementor' ),
-								'second'	=>	__( 'Facebook Posts', 'social-elementor' ),
-								'third'		=>	__( 'Instagram Posts', 'social-elementor' ),
-								'fourth'	=>	__( 'Google Reviews Posts', 'social-elementor' ),
-								'fifth'		=>	__( 'Social Connection Button', 'social-elementor' ),
-								'sixth'		=>	__( 'Much More with Improvements', 'social-elementor' ),
+								'first'		=>	esc_html__( 'Twitter Posts', 'social-elementor' ),
+								'second'	=>	esc_html__( 'Facebook Posts', 'social-elementor' ),
+								'third'		=>	esc_html__( 'Instagram Posts', 'social-elementor' ),
+								'fourth'	=>	esc_html__( 'Google Reviews Posts', 'social-elementor' ),
+								'fifth'		=>	esc_html__( 'Social Connection Button', 'social-elementor' ),
+								'sixth'		=>	esc_html__( 'Much More with Improvements', 'social-elementor' ),
 							);
 
 							$features = '';
@@ -160,8 +153,8 @@ $code_doc_url = apply_filters( 'social_code_snippets_link', '#' );
 								?>
 							</p>
 
-							<?php $contribute_suggession      = apply_filters( 'contribute_suggession', '#' );
-							$contribute_suggession_text = apply_filters( 'contribute_suggession_text', __( 'Coming Soon »', 'social-elementor' ) );
+							<?php $contribute_suggession      = apply_filters( 'contribute_suggession', 'https://webempire.org.in/contact/?utm_campaign=web-agency&utm_medium=email&utm_source=google' );
+							$contribute_suggession_text = apply_filters( 'contribute_suggession_text', __( 'Send a Suggession »', 'social-elementor' ) );
 
 							printf(
 								/* translators: %1$s: demos link. */
@@ -196,9 +189,8 @@ $code_doc_url = apply_filters( 'social_code_snippets_link', '#' );
 								?>
 							</p>
 								<?php
-									$visit_demos      = apply_filters( 'visit_demos', '#' );
-									$visit_demos_text = apply_filters( 'visit_demos_text', __( 'Coming Soon »', 'social-elementor' ) );
-									// $visit_demos_text = apply_filters( 'visit_demos_text', __( 'View Demos »', 'social-elementor' ) );
+									$visit_demos      = apply_filters( 'visit_demos', 'https://webempire.org.in/social-posts/?utm_source=google&utm_medium=social-post&utm_campaign=social-elementor-plugin' );
+									$visit_demos_text = apply_filters( 'visit_demos_text', esc_html__( 'View Demo »', 'social-elementor' ) );
 
 									printf(
 										/* translators: %1$s: demos link. */
@@ -220,7 +212,7 @@ $code_doc_url = apply_filters( 'social_code_snippets_link', '#' );
 							<p>
 								<?php esc_html_e( 'Not sure how something works? Take a peek at the knowledge base and learn.', 'social-elementor' ); ?>
 							</p>
-							<a href='<?php echo esc_url( $kb_url ); ?> ' target="_blank" rel="noopener"><?php esc_attr_e( 'Coming Soon »', 'social-elementor' ); ?></a>
+							<a href='<?php echo esc_url( $kb_url ); ?> ' target="_blank" rel="noopener"><?php esc_attr_e( 'Knowledge Base »', 'social-elementor' ); ?></a>
 						</div>
 					</div>
 
@@ -233,7 +225,7 @@ $code_doc_url = apply_filters( 'social_code_snippets_link', '#' );
 							<p>
 								<?php esc_html_e( 'Social Widget\'s Actions and Filters are listed here, which will help you to configure custom requirements.', 'social-elementor' ); ?>
 							</p>
-							<a href='<?php echo esc_url( $code_doc_url ); ?> ' target="_blank" rel="noopener"><?php esc_attr_e( 'Coming Soon »', 'social-elementor' ); ?></a>
+							<a href='<?php echo esc_url( $code_doc_url ); ?> ' target="_blank" rel="noopener"><?php esc_attr_e( 'Actions / Filters »', 'social-elementor' ); ?></a>
 						</div>
 					</div>
 
@@ -252,8 +244,8 @@ $code_doc_url = apply_filters( 'social_code_snippets_link', '#' );
 									?>
 								</p>
 								<?php
-									$social_support_link      = apply_filters( 'social_support_link', '#' );
-									$social_support_link_text = apply_filters( 'social_support_link_text', __( 'Coming Soon »', 'social-elementor' ) );
+									$social_support_link      = apply_filters( 'social_support_link', 'https://webempire.org.in/support/?utm_source=google&utm_medium=email&utm_campaign=social-elementor-plugin' );
+									$social_support_link_text = apply_filters( 'social_support_link_text', esc_html__( 'Get Support »', 'social-elementor' ) );
 
 									printf(
 										/* translators: %1$s: social support link. */

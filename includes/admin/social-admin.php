@@ -14,7 +14,7 @@ use SocialElementor\Classes\Social_Helper;
 			<div class="social-container social-flex">
 				<div class="social-title">
 					<a href="<?php echo esc_url( $social_elementor_visit_site_url ); ?>" target="_blank" rel="noopener" >
-						<img src="<?php echo esc_url( SOCIAL_ELEMENTOR_URL . 'admin/assets/images/WebEmpire.png' ); ?>" class="social-header-icon" alt="<?php echo SOCIAL_ELEMENTOR_PLUGIN_NAME; ?> " >
+					<h1 class="plug-author-title"> WebEmpire </h1>
 					<span class="social-plugin-version"><?php echo SOCIAL_ELEMENTOR_VER; ?></span>
 					<?php do_action( 'social_header_title' ); ?>
 					</a>

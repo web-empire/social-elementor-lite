@@ -38,10 +38,11 @@ class Social_Config {
 			self::$widget_list = array(
 				'Blog'            => array(
 					'slug'      => 'social-blog-posts',
-					'title'     => __( 'Blog' , 'social-elementor' ),
+					'title'     => esc_html__( 'Blog' , 'social-elementor' ),
 					'keywords'  => [ 'social-elementor', 'post', 'grid', 'masonry', 'carousel', 'content grid', 'content' ],
 					'icon'      => 'social-icon-post-grid',
-					'title_url' => '#',
+					'title_url' => 'https://webempire.org.in/docs/blog-elementor-widget/?utm_source=google&utm_medium=social-post&utm_campaign=social-elementor-plugin',
+					'doc_url'	=> 'https://webempire.org.in/docs/blog-elementor-widget/?utm_source=google&utm_medium=social-post&utm_campaign=social-elementor-plugin',
 					'default'   => true,
 					'is_pro'	=> false,
 					'features'	=> array (
@@ -51,12 +52,14 @@ class Social_Config {
 						'fourth'	=>	__( '<b class="feature"> 04. </b> Post Sorting Feature', 'social-elementor' ),
 						'fifth'		=>	__( '<b class="feature"> 05. </b> Multiple Design Options', 'social-elementor' ),
 						'sixth'		=>	__( '<b class="feature"> 06. </b> Meta, Excerpt, CTA Support', 'social-elementor' ),
-						'seventh'	=>	__( '<b class="feature"> </b> And Much More... <a href="#" target="_blank"> Coming Soon » </a>', 'social-elementor' ),
+						'seventh'	=>	__( '<b class="feature"> </b> And Much More... <a href="https://webempire.org.in/docs/blog-elementor-widget/?utm_source=google&utm_medium=social-post&utm_campaign=social-elementor-plugin" target="_blank"> See Here » </a>', 'social-elementor' ),
 					),
 				),
 				'Blog-Pro'      => array(
 					'slug'      => 'social-blog-pro',
-					'title'     => __( 'Blog Pro', 'social-elementor' ),
+					'title'     => esc_html__( 'Blog Pro', 'social-elementor' ),
+					'title_url' => 'https://webempire.org.in/docs/blog-elementor-widget/?utm_source=google&utm_medium=social-post&utm_campaign=social-elementor-plugin',
+					'doc_url'	=> 'https://webempire.org.in/docs/blog-elementor-widget/?utm_source=google&utm_medium=social-post&utm_campaign=social-elementor-plugin',
 					'default'   => true,
 					'is_pro'	=> true,
 					'features'	=> array (
@@ -66,7 +69,7 @@ class Social_Config {
 						'fourth'	=>	__( '<b class="feature"> 04. </b> Advanced Skin Layouts', 'social-elementor' ),
 						'fifth'		=>	__( '<b class="feature"> 05. </b> Infinite Scroll / Button AJAX Events', 'social-elementor' ),
 						'sixth'		=>	__( '<b class="feature"> 06. </b> Advanced and Extra Customization options', 'social-elementor' ),
-						'seventh'	=>	__( '<b class="feature"> </b> And Much More... <a href="#" target="_blank"> Coming Soon » </a>', 'social-elementor' ),
+						'seventh'	=>	__( '<b class="feature"> </b> And Much More... <a href="https://webempire.org.in/docs/blog-elementor-widget/?utm_source=google&utm_medium=social-post&utm_campaign=social-elementor-plugin" target="_blank"> See Here » </a>', 'social-elementor' ),
 					),
 				),
 			);

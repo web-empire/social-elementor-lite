@@ -1,5 +1,7 @@
 ( function( $ ) {
 
+	"use strict";
+
 	var loadStatus = true;
 	var count = 1;
 	var loader = '';

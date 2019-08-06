@@ -39,6 +39,11 @@
 	font-style: italic;
 }
 
+.plug-author-title {
+	font-size: 25px;
+    font-weight: bold;
+}
+
 .social-container {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -202,7 +207,7 @@
     margin-left: 10px;
     padding: 2px 7px;
 	color: #fff;
-	margin-top: 12px;
+	margin-top: 5px;
 }
 
 .social-widget-list #Blog-Pro.activate {
@@ -325,7 +330,8 @@
 
 .social-widget-wrapper  h3 {
 	border-bottom: 1px solid #ccc;
-    padding-bottom: 24px;
+	padding-bottom: 24px;
+	margin-top: 10px;
 }
 
 .widget-feature b.feature {
@@ -338,9 +344,18 @@
 	padding-left: 30px;
 }
 
+h4.see-all-features {
+	font-size: 15px;
+	margin-bottom: 15px;
+}
+
 .social-widget-list .social-widget-wrapper.activate {
 	border: 1.5px solid #8141bb !important;
 	box-shadow: 0 5px 15px 7px #ddd;
+}
+
+.social-sidebar .postbox {
+	padding-bottom: 5px;
 }
 
 /* Footer connections */
@@ -361,7 +376,7 @@
 
 /* Responsive Alignment */
 
-@media(max-width: 550px) {
+@media(max-width: 768px) {
     .social-widgets-boxes a.social-activate-widget, 
     .social-widgets-boxes a.social-deactivate-widget, 
     .social-widgets-boxes a.get-pro-social {
@@ -370,6 +385,16 @@
 
     div.social-bulk-actions-wrap {
         margin-top: 20px;
+	}
+
+	.social-widgets-boxes .social-widget-features {
+		display: block;
+		width: unset;
+	}
+
+	.social-widget-features .left-features-section, 
+	.social-widget-features .right-features-section {
+		width: unset;
 	}
 	
 	.social-widget-wrapper h3 {

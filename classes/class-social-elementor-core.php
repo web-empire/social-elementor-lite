@@ -195,7 +195,7 @@ class Social_Elementor_Core {
 			array(
 				'post_loader'        => SOCIAL_ELEMENTOR_URL . 'assets/img/post-loader.gif',
 				'url'                => admin_url( 'admin-ajax.php' ),
-				'search_str'         => __( 'Search:', 'social-elementor' ),
+				'search_str'         => esc_html__( 'Search:', 'social-elementor' ),
 			)
 		);
 

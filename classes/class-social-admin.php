@@ -146,7 +146,7 @@ if ( ! class_exists( 'Social_Admin' ) ) {
 
 			// Enable header icon filter below.
 			$social_icon = apply_filters( 'social_elementor_admin_header_logo', true );
-			$social_elementor_visit_site_url = apply_filters( 'social_elementor_site_url', '#' );
+			$social_elementor_visit_site_url = apply_filters( 'social_elementor_site_url', 'https://webempire.org.in/?utm_campaign=web-agency&utm_medium=website&utm_source=google' );
 			$social_admin_header_wrapper_class = apply_filters( 'social_admin_header_wrapper_class', array( $action ) );
 
 			include_once SOCIAL_ELEMENTOR_DIR . 'includes/admin/social-admin.php';
@@ -183,8 +183,8 @@ if ( ! class_exists( 'Social_Admin' ) ) {
 
 			$localize = array(
 				'ajax_nonce'   => wp_create_nonce( 'social-widget-nonce' ),
-				'activate'     => __( 'Activate', 'social-elementor' ),
-				'deactivate'   => __( 'Deactivate', 'social-elementor' ),
+				'activate'     => esc_html__( 'Activate', 'social-elementor' ),
+				'deactivate'   => esc_html__( 'Deactivate', 'social-elementor' ),
 			);
 
 			wp_localize_script( 'social-admin-settings', 'social', apply_filters( 'social_js_localize', $localize ) );

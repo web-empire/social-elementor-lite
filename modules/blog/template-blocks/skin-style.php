@@ -1030,7 +1030,7 @@ abstract class Skin_Style {
 		?>
 		<div class="social-blog-post-header-filters-wrap<?php echo $tab_responsive; ?>">
 			<ul class="social-blog-post-header-filters">
-				<li class="social-blog-post-header-filter social-blog-post-active-filter" data-filter="*"><?php echo ( 'All' == $all || '' == $all ) ? __( 'All', 'social-elementor' ) : $all; ?></li>
+				<li class="social-blog-post-header-filter social-blog-post-active-filter" data-filter="*"><?php echo ( 'All' == $all || '' == $all ) ? esc_html__( 'All', 'social-elementor' ) : $all; ?></li>
 				<?php foreach ( $filters as $key => $value ) { ?>
 				<li class="social-blog-post-header-filter" data-filter="<?php echo '.' . $value->slug; ?>"><?php echo $value->name; ?></li>
 				<?php } ?>
@@ -1038,10 +1038,10 @@ abstract class Skin_Style {
 
 			<?php if ( 'yes' == $this->get_instance_value( 'tabs_dropdown' ) ) { ?>
 				<div class="social-blog-post-dropdown-filters">
-					<div class="social-blog-post-dropdown-filters-button"><?php echo ( 'All' == $all || '' == $all ) ? __( 'All', 'social-elementor' ) : $all; ?><i class="fa fa-angle-down"></i></div>
+					<div class="social-blog-post-dropdown-filters-button"><?php echo ( 'All' == $all || '' == $all ) ? esc_html__( 'All', 'social-elementor' ) : $all; ?><i class="fa fa-angle-down"></i></div>
 
 					<ul class="social-blog-post-dropdown-filters-list social-blog-post-header-filters">
-						<li class="social-blog-post-dropdown-filters-item social-blog-post-header-filter social-blog-post-active-filter" data-filter="*"><?php echo ( 'All' == $all || '' == $all ) ? __( 'All', 'social-elementor' ) : $all; ?></li>
+						<li class="social-blog-post-dropdown-filters-item social-blog-post-header-filter social-blog-post-active-filter" data-filter="*"><?php echo ( 'All' == $all || '' == $all ) ? esc_html__( 'All', 'social-elementor' ) : $all; ?></li>
 						<?php foreach ( $filters as $key => $value ) { ?>
 						<li class="social-blog-post-dropdown-filters-item social-blog-post-header-filter" data-filter="<?php echo '.' . $value->slug; ?>"><?php echo $value->name; ?></li>
 						<?php } ?>

@@ -33,6 +33,8 @@ The Social Addon for Elementor is built for speed and performance along with lot
 
 We understand the need for a quality product backed by dedicated support that cares. We are here to listen to all your queries and help you make the most out of our plugin.
 
+<a href="https://webempire.org.in/support/?utm_source=google&utm_medium=email&utm_campaign=social-elementor-plugin" target="_blank" rel=""> Need help? We are just a click away! </a>
+
 <strong> Want To Contribute To The Plugin? </strong>
 
 You may now contribute to the plugin on Github: <a href="https://github.com/web-empire/social-elementor-lite" target="_blank" rel="">Social Addons for Elementor on Github</a>
@@ -46,4 +48,7 @@ You may now contribute to the plugin on Github: <a href="https://github.com/web-
 4. You can configure this addon from there.
 
 ### 1.0.0 ###
-* Initial release
+- Initial release
+
+Version 1.0.1
+- Improvement: Replaced hash links with valid brand links
