@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Social Addons for Elementor (Lite) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Social Addons for Elementor (Lite) 1.0.0\n"
+"Project-Id-Version: Social Addons for Elementor (Lite) 1.0.1\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/social-elementor-lite\n"
-"POT-Creation-Date: 2019-07-04 13:45:52+00:00\n"
+"POT-Creation-Date: 2019-08-06 14:39:07+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,15 +25,11 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Generator: grunt-wp-i18n1.0.2\n"
 
-#: classes/class-social-admin.php:186
-#: includes/admin/social-general-future-revampp.php:46
-#: includes/admin/social-general.php:46
+#: classes/class-social-admin.php:186 includes/admin/social-general.php:49
 msgid "Activate"
 msgstr ""
 
-#: classes/class-social-admin.php:187
-#: includes/admin/social-general-future-revampp.php:53
-#: includes/admin/social-general.php:53
+#: classes/class-social-admin.php:187 includes/admin/social-general.php:56
 msgid "Deactivate"
 msgstr ""
 
@@ -72,61 +68,63 @@ msgstr ""
 msgid "Blog"
 msgstr ""
 
-#: classes/social-config.php:48
+#: classes/social-config.php:49
 msgid "<b class=\"feature\"> 01. </b> 3+ Skin Layouts"
 msgstr ""
 
-#: classes/social-config.php:49
+#: classes/social-config.php:50
 msgid "<b class=\"feature\"> 02. </b> Custom Post Query"
 msgstr ""
 
-#: classes/social-config.php:50
+#: classes/social-config.php:51
 msgid "<b class=\"feature\"> 03. </b> Grid, Masonry Effect"
 msgstr ""
 
-#: classes/social-config.php:51
+#: classes/social-config.php:52
 msgid "<b class=\"feature\"> 04. </b> Post Sorting Feature"
 msgstr ""
 
-#: classes/social-config.php:52
+#: classes/social-config.php:53
 msgid "<b class=\"feature\"> 05. </b> Multiple Design Options"
 msgstr ""
 
-#: classes/social-config.php:53
+#: classes/social-config.php:54
 msgid "<b class=\"feature\"> 06. </b> Meta, Excerpt, CTA Support"
 msgstr ""
 
-#: classes/social-config.php:54 classes/social-config.php:69
+#: classes/social-config.php:55 classes/social-config.php:72
 msgid ""
-"<b class=\"feature\"> </b> And Much More... <a href=\"#\" "
-"target=\"_blank\"> Coming Soon » </a>"
+"<b class=\"feature\"> </b> And Much More... <a "
+"href=\"https://webempire.org.in/docs/blog-elementor-widget/?utm_"
+"source=google&utm_medium=social-post&utm_campaign=social-elementor-plugin\" "
+"target=\"_blank\"> See Here » </a>"
 msgstr ""
 
-#: classes/social-config.php:59
+#: classes/social-config.php:60
 msgid "Blog Pro"
 msgstr ""
 
-#: classes/social-config.php:63
+#: classes/social-config.php:66
 msgid "<b class=\"feature\"> 01. </b> Infinite Load Event"
 msgstr ""
 
-#: classes/social-config.php:64
+#: classes/social-config.php:67
 msgid "<b class=\"feature\"> 02. </b> Pagination Feasibility"
 msgstr ""
 
-#: classes/social-config.php:65
+#: classes/social-config.php:68
 msgid "<b class=\"feature\"> 03. </b> Filterable Tabs Options"
 msgstr ""
 
-#: classes/social-config.php:66
+#: classes/social-config.php:69
 msgid "<b class=\"feature\"> 04. </b> Advanced Skin Layouts"
 msgstr ""
 
-#: classes/social-config.php:67
+#: classes/social-config.php:70
 msgid "<b class=\"feature\"> 05. </b> Infinite Scroll / Button AJAX Events"
 msgstr ""
 
-#: classes/social-config.php:68
+#: classes/social-config.php:71
 msgid "<b class=\"feature\"> 06. </b> Advanced and Extra Customization options"
 msgstr ""
 
@@ -146,158 +144,129 @@ msgstr ""
 msgid "Settings saved successfully."
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:23
-#: includes/admin/social-general.php:23 modules/blog/skins/skin-base.php:110
+#: includes/admin/social-general.php:26 modules/blog/skins/skin-base.php:110
 msgid "General"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:25
-#: includes/admin/social-general.php:25
+#: includes/admin/social-general.php:28
 msgid "Social & Blog Post Elements"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:27
-#: includes/admin/social-general.php:27
+#: includes/admin/social-general.php:30
 msgid "Activate All"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:28
-#: includes/admin/social-general.php:28
+#: includes/admin/social-general.php:31
 msgid "Deactivate All"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:61
-#: includes/admin/social-general.php:61
-msgid "Settings"
+#: includes/admin/social-general.php:77
+msgid "Get Pro"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:84
-#: includes/admin/social-general.php:84
-msgid "Releasing Soon!!!"
+#: includes/admin/social-general.php:103
+msgid "See All Features »"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:124
-#: includes/admin/social-general.php:124
+#: includes/admin/social-general.php:117
 msgid "Upcoming Social Elements"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:130
-#: includes/admin/social-general.php:130
+#: includes/admin/social-general.php:123
 msgid ""
 "Here is the tentative upcoming releases in the Social Elementor.We hope you "
 "like it!!!"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:137
-#: includes/admin/social-general.php:137
+#: includes/admin/social-general.php:130
 msgid "Twitter Posts"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:138
-#: includes/admin/social-general.php:138
+#: includes/admin/social-general.php:131
 msgid "Facebook Posts"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:139
-#: includes/admin/social-general.php:139
+#: includes/admin/social-general.php:132
 msgid "Instagram Posts"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:140
-#: includes/admin/social-general.php:140
+#: includes/admin/social-general.php:133
 msgid "Google Reviews Posts"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:141
-#: includes/admin/social-general.php:141
+#: includes/admin/social-general.php:134
 msgid "Social Connection Button"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:142
-#: includes/admin/social-general.php:142
+#: includes/admin/social-general.php:135
 msgid "Much More with Improvements"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:159
-#: includes/admin/social-general.php:159
+#: includes/admin/social-general.php:152
 msgid ""
 "You can contribute to improvise this plugin or can give us suggessions to "
 "make it more better. Your contribution will highly appreciated!"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:164
-msgid "Share Your Suggessions »"
+#: includes/admin/social-general.php:157
+msgid "Send a Suggession »"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:189
-#: includes/admin/social-general.php:189
+#: includes/admin/social-general.php:182
 #. translators: %1$s: demos link.
 msgid "Visit Demos"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:195
-#: includes/admin/social-general.php:195
+#: includes/admin/social-general.php:188
 msgid ""
 "Visit here to see our elegant demos for these widgets. We hope you like "
 "it!!!"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:200
-msgid "View Demos »"
+#: includes/admin/social-general.php:193
+msgid "View Demo »"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:215
-#: includes/admin/social-general.php:216
+#: includes/admin/social-general.php:208
 #. translators: %1$s: demos link.
 msgid "Knowledge Base"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:220
-#: includes/admin/social-general.php:221
+#: includes/admin/social-general.php:213
 msgid "Not sure how something works? Take a peek at the knowledge base and learn."
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:222
-msgid "Visit Knowledge Base »"
+#: includes/admin/social-general.php:215
+msgid "Knowledge Base »"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:228
-#: includes/admin/social-general.php:229
+#: includes/admin/social-general.php:221
 msgid "Code Snippets"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:233
-#: includes/admin/social-general.php:234
+#: includes/admin/social-general.php:226
 msgid ""
 "Social Widget's Actions and Filters are listed here, which will help you to "
 "configure custom requirements."
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:235
-msgid "Refer the Documentation »"
+#: includes/admin/social-general.php:228
+msgid "Actions / Filters »"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:241
-#: includes/admin/social-general.php:242
+#: includes/admin/social-general.php:234
 msgid "Five Star Support"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:249
-#: includes/admin/social-general.php:250
+#: includes/admin/social-general.php:242
 #. translators: %1$s: social name.
 msgid ""
 "Got a question? Get in touch with Social & Blog Posts Addons for Elementor "
 "developers. We're happy to help!"
 msgstr ""
 
-#: includes/admin/social-general-future-revampp.php:255
-msgid "Submit a Ticket »"
-msgstr ""
-
-#: includes/admin/social-general.php:164 includes/admin/social-general.php:200
-#: includes/admin/social-general.php:223 includes/admin/social-general.php:236
-#: includes/admin/social-general.php:256
-msgid "Coming Soon »"
+#: includes/admin/social-general.php:248
+msgid "Get Support »"
 msgstr ""
 
 #: modules/blog/skins/skin-base.php:118 modules/blog/skins/skin-base.php:1105
@@ -703,17 +672,17 @@ msgid "Alignment"
 msgstr ""
 
 #: modules/blog/skins/skin-base.php:1165 modules/blog/skins/skin-base.php:1506
-#: modules/blog/skins/skin-base.php:1536 modules/blog/skins/skin-card.php:267
+#: modules/blog/skins/skin-base.php:1536 modules/blog/skins/skin-card.php:268
 msgid "Left"
 msgstr ""
 
 #: modules/blog/skins/skin-base.php:1169 modules/blog/skins/skin-base.php:1510
-#: modules/blog/skins/skin-card.php:271
+#: modules/blog/skins/skin-card.php:272
 msgid "Center"
 msgstr ""
 
 #: modules/blog/skins/skin-base.php:1173 modules/blog/skins/skin-base.php:1514
-#: modules/blog/skins/skin-base.php:1540 modules/blog/skins/skin-card.php:275
+#: modules/blog/skins/skin-base.php:1540 modules/blog/skins/skin-card.php:276
 msgid "Right"
 msgstr ""
 
@@ -846,23 +815,23 @@ msgstr ""
 msgid "Separator Color"
 msgstr ""
 
-#: modules/blog/skins/skin-card.php:262
+#: modules/blog/skins/skin-card.php:263
 msgid "Separator Alignment"
 msgstr ""
 
-#: modules/blog/skins/skin-card.php:313
+#: modules/blog/skins/skin-card.php:314
 msgid "Box Max Width"
 msgstr ""
 
-#: modules/blog/skins/skin-card.php:335
+#: modules/blog/skins/skin-card.php:336
 msgid "Lift Up Box by"
 msgstr ""
 
-#: modules/blog/skins/skin-card.php:357
+#: modules/blog/skins/skin-card.php:358
 msgid "Box Bottom Spacing"
 msgstr ""
 
-#: modules/blog/skins/skin-card.php:380
+#: modules/blog/skins/skin-card.php:381
 msgid "Wrap Background Color"
 msgstr ""
 
@@ -1029,5 +998,7 @@ msgid "WebEmpire"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://profiles.wordpress.org/webempire/"
+msgid ""
+"https://webempire.org.in/?utm_campaign=web-agency&utm_medium=website&utm_"
+"source=google"
 msgstr ""
