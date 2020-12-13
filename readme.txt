@@ -34,6 +34,7 @@ As this is a initial version it has a free and amazing widget:
   <li> <a href="https://webempire.org.in/docs-category/social-blog-posts/" target="_blank"> Blog Widget Documentation </a> </li>
   <li> <a href="https://webempire.org.in/business-reviews/" target="_blank"> Business Reviews Widget Demo </a> </li>
   <li> <a href="https://webempire.org.in/docs-category/social-business-reviews/" target="_blank"> Business Reviews  Widget Documentation </a> </li>
+  <li> <a href="https://webempire.org.in/social-icons/" target="_blank"> Social Icons Demo </a> </li>
 </ul>
 
 <h4> Premium Features </h4>
