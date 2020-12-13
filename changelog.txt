@@ -1,4 +1,4 @@
-Version 1.0.0 - Sunday, 12th December 2020
+Version 1.2.0 - Sunday, 12th December 2020
 - New: Introduced Social Icons
 
 Version 1.1.0 - Sunday, 02nd July 2020
