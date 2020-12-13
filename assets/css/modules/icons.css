@@ -1,0 +1,66 @@
+.se-social-icons-wrapper, .se-social-icons-wrapper a {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    -js-display: inline-flex;
+    display: -moz-inline-box;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    align-items: center;
+    -ms-flex-align: center;
+}
+
+.se-social-icon i {
+    position: relative;
+    display: initial;
+    font-size: 15px;
+    width: 1em;
+    height: 1em;
+}
+
+.se-social-icon-label {
+    margin: 0 0 0 10px;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.se-social-icon:not(:last-child) {
+    margin-right: 10px;
+}
+
+.se-social-icons-wrapper a {
+    padding: 15px;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    color: #ffffff;
+    font-size: 30px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.se-social-sep-type--custom .se-social-icon-sep {
+    color: #d30c5c;
+    font-size: 24px;
+}
+
+.se-social-separator--pipe .se-social-icon-sep {
+    width: 1px;
+    height: 1em;
+    background: #d30c5c;
+}
+
+.se-social-icon-sep {
+    margin-right: 10px;
+}
+
+.se-social-icon-sep:last-child {
+    display: none;
+}
+
+.social-icons:not(.elementor-element-edit-mode) .se-social-icon-is-sticky {
+    position: fixed;
+}

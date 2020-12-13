@@ -48,9 +48,9 @@ class Skin_Event extends Skin_Style {
 	public function render_featured_image() {
 
 		$settings          = self::$settings;
-		$settings['image'] = [
+		$settings['image'] = array(
 			'id' => get_post_thumbnail_id(),
-		];
+		);
 
 		$settings['image_size'] = $this->get_instance_value( 'image_size' );
 
@@ -58,15 +58,15 @@ class Skin_Event extends Skin_Style {
 
 		$thumbnail_html = Group_Control_Image_Size::get_attachment_image_html( $settings );
 
-		if ( 'none' == $this->get_instance_value( 'image_position' ) ) {
+		if ( 'none' === $this->get_instance_value( 'image_position' ) ) {
 			$thumbnail_html = '';
 		}
 
 		do_action( 'social_elementor_single_post_before_thumbnail', get_the_ID(), $settings );
 
-		if ( 'yes' == $this->get_instance_value( 'link_img' ) ) {
+		if ( 'yes' === $this->get_instance_value( 'link_img' ) ) {
 			$href   = apply_filters( 'social_single_post_permalink', get_the_permalink(), get_the_ID(), $settings );
-			$target = ( 'yes' == $this->get_instance_value( 'link_new_tab' ) ) ? '_blank' : '_self';
+			$target = ( 'yes' === $this->get_instance_value( 'link_new_tab' ) ) ? '_blank' : '_self';
 			$this->add_render_attribute( 'img_link' . get_the_ID(), 'target', $target );
 		} else {
 			$href = 'javascript:void(0);';
@@ -105,10 +105,10 @@ class Skin_Event extends Skin_Style {
 	 */
 	public function get_outer_wrapper_classes() {
 
-		$classes = [
+		$classes = array(
 			'social-blog-post-grid-layout',
 			'social-blog-posts',
-		];
+		);
 
 		return $classes;
 	}

@@ -46,11 +46,11 @@ class Skin_Card extends Skin_Style {
 
 		$settings = self::$settings;
 
-		do_action( 'social_elementor_single_post/skin_card/before_separator', get_the_ID(), $settings );
+		do_action( 'social_elementor_single_post_skin_card_before_separator', get_the_ID(), $settings );
 
 		printf( '<div class="social-blog-post-separator"></div>' );
 
-		do_action( 'social_elementor_single_post/skin_card/after_separator', get_the_ID(), $settings );
+		do_action( 'social_elementor_single_post_skin_card_after_separator', get_the_ID(), $settings );
 	}
 
 	/**
@@ -63,10 +63,10 @@ class Skin_Card extends Skin_Style {
 	 */
 	public function get_outer_wrapper_classes() {
 
-		$classes = [
+		$classes = array(
 			'social-blog-post-grid-layout',
 			'social-blog-posts',
-		];
+		);
 
 		return $classes;
 	}

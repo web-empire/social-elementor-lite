@@ -78,14 +78,14 @@ class Module extends Module_Base {
 
 		$ids = isset( $_POST['id'] ) ? sanitize_key( $_POST['id'] ) : array();
 
-		$results = [];
+		$results = array();
 
 		$query = new \WP_Query(
-			[
+			array(
 				'post_type'      => 'any',
 				'post__in'       => $ids,
 				'posts_per_page' => -1,
-			]
+			)
 		);
 
 		foreach ( $query->posts as $post ) {
@@ -120,7 +120,7 @@ class Module extends Module_Base {
 		if ( 'all' === $req_post_type ) {
 			$post_types = get_post_types( $args, $output, $operator );
 
-			$post_types['Blog' ] = 'post';
+			$post_types['Blog']  = 'post';
 			$post_types['Pages'] = 'page';
 		} else {
 			$post_types[ $req_post_type ] = $req_post_type;
@@ -144,7 +144,7 @@ class Module extends Module_Base {
 				while ( $query->have_posts() ) {
 					$query->the_post();
 					$title  = get_the_title();
-					$title .= ( 0 != $query->post->post_parent ) ? ' (' . get_the_title( $query->post->post_parent ) . ')' : '';
+					$title .= ( 0 !== $query->post->post_parent ) ? ' (' . get_the_title( $query->post->post_parent ) . ')' : '';
 					$id     = get_the_id();
 					$data[] = array(
 						'id'   => $id,
@@ -211,7 +211,7 @@ class Module extends Module_Base {
 		add_action( 'wp_ajax_social_elementor_get_blog_postss_by_query', array( $this, 'get_posts_by_query' ) );
 		add_action( 'wp_ajax_social_elementor_get_blog_postss_title_by_id', array( $this, 'get_posts_title_by_id' ) );
 
-		add_action( 'elementor/controls/controls_registered', [ $this, 'register_controls' ] );
+		add_action( 'elementor/controls/controls_registered', array( $this, 'register_controls' ) );
 
 	}
 }

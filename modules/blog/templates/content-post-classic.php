@@ -23,8 +23,8 @@ if ( empty( $post ) ) {
 <div class="social-blog-post-wrapper <?php echo $this->get_masonry_classes(); ?> <?php echo ( $is_featured ) ? 'social-blog-post-wrapper-featured' : ''; ?>">
 	<div class="social-blog-post-bg-wrapper">
 
-		<?php if ( 'yes' == $this->get_instance_value( 'link_complete_box' ) ) { ?>
-			<a href="<?php the_permalink(); ?>" target="<?php echo ( 'yes' == $this->get_instance_value( 'link_complete_box_tab' ) ) ? '_blank' : '_self'; ?>" class="social-blog-post-complete-box-overlay"></a>
+		<?php if ( 'yes' === $this->get_instance_value( 'link_complete_box' ) ) { ?>
+			<a href="<?php the_permalink(); ?>" target="<?php echo ( 'yes' === $this->get_instance_value( 'link_complete_box_tab' ) ) ? '_blank' : '_self'; ?>" class="social-blog-post-complete-box-overlay"></a>
 		<?php } ?>
 		<?php do_action( 'social_elementor_single_post_before_inner_wrap', get_the_ID(), $settings ); ?>
 
@@ -37,14 +37,14 @@ if ( empty( $post ) ) {
 			<div class="social-blog-post-content-wrapper">
 			<?php
 			if (
-				'media' == $this->get_instance_value( 'terms_position' ) &&
-				'background' == $this->get_instance_value( 'image_position' )
+				'media' === $this->get_instance_value( 'terms_position' ) &&
+				'background' === $this->get_instance_value( 'image_position' )
 			) {
 				?>
 				<div class="social-blog-post-terms-wrap"><?php $this->render_terms( $this->get_instance_value( 'terms_position' ) ); ?></div>
 				<?php
 			}
-			if ( 'above_content' == $this->get_instance_value( 'terms_position' ) ) {
+			if ( 'above_content' === $this->get_instance_value( 'terms_position' ) ) {
 				?>
 				<div class="social-blog-post-terms-wrap"><?php $this->render_terms( 'above_content' ); ?></div>
 				<?php

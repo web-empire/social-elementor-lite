@@ -18,13 +18,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Module_Manager {
 
-
 	/**
 	 * Member Variable
 	 *
 	 * @var modules.
 	 */
-	private $_modules = [];
+	private $_modules = array();
 
 	/**
 	 * Register Modules.
@@ -32,12 +31,14 @@ class Module_Manager {
 	 * @since 1.0.0
 	 */
 	public function register_modules() {
-		$all_modules = [
+
+		$all_modules = array(
 			/* Control */
 			'query-post',
 			/* Widgets */
 			'blog',
-		];
+			'icons',
+		);
 
 		foreach ( $all_modules as $module_name ) {
 			$class_name = str_replace( '-', ' ', $module_name );

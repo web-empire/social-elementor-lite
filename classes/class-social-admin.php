@@ -51,7 +51,7 @@ if ( ! class_exists( 'Social_Admin' ) ) {
 			wp_register_style(
 				'social-elementor-style',
 				SOCIAL_ELEMENTOR_URL . 'editor-assets/css/style.css',
-				[],
+				array(),
 				SOCIAL_ELEMENTOR_VER
 			);
 
@@ -86,7 +86,7 @@ if ( ! class_exists( 'Social_Admin' ) ) {
 			add_action( 'social_render_admin_content', __CLASS__ . '::render_content' );
 
 			// Enqueue admin scripts.
-			if ( isset( $_REQUEST['page'] ) && SOCIAL_ELEMENTOR_SLUG == $_REQUEST['page'] ) {
+			if ( isset( $_REQUEST['page'] ) && SOCIAL_ELEMENTOR_SLUG === $_REQUEST['page'] ) {
 
 				add_action( 'admin_enqueue_scripts', __CLASS__ . '::styles_scripts' );
 
@@ -141,12 +141,12 @@ if ( ! class_exists( 'Social_Admin' ) ) {
 		 */
 		static public function render() {
 			$action = ( isset( $_GET['action'] ) ) ? esc_attr( $_GET['action'] ) : '';
-			$action = ( ! empty( $action ) && '' != $action ) ? $action : 'general';
+			$action = ( ! empty( $action ) && '' !== $action ) ? $action : 'general';
 			$action = str_replace( '_', '-', $action );
 
 			// Enable header icon filter below.
-			$social_icon = apply_filters( 'social_elementor_admin_header_logo', true );
-			$social_elementor_visit_site_url = apply_filters( 'social_elementor_site_url', 'https://webempire.org.in/?utm_campaign=web-agency&utm_medium=website&utm_source=google' );
+			$social_icon                       = apply_filters( 'social_elementor_admin_header_logo', true );
+			$social_elementor_visit_site_url   = apply_filters( 'social_elementor_site_url', 'https://webempire.org.in/?utm_campaign=web-agency&utm_medium=website&utm_source=google' );
 			$social_admin_header_wrapper_class = apply_filters( 'social_admin_header_wrapper_class', array( $action ) );
 
 			include_once SOCIAL_ELEMENTOR_DIR . 'includes/admin/social-admin.php';
@@ -161,7 +161,7 @@ if ( ! class_exists( 'Social_Admin' ) ) {
 		static public function render_content() {
 
 			$action = ( isset( $_GET['action'] ) ) ? esc_attr( $_GET['action'] ) : '';
-			$action = ( ! empty( $action ) && '' != $action ) ? $action : 'general';
+			$action = ( ! empty( $action ) && '' !== $action ) ? $action : 'general';
 			$action = str_replace( '_', '-', $action );
 
 			$social_admin_header_wrapper_class = apply_filters( 'social_admin_header_wrapper_class', array( $action ) );
@@ -182,9 +182,9 @@ if ( ! class_exists( 'Social_Admin' ) ) {
 			wp_enqueue_script( 'social-admin-settings', SOCIAL_ELEMENTOR_URL . 'admin/assets/admin-menu-settings.js', array( 'jquery', 'wp-util', 'updates' ), SOCIAL_ELEMENTOR_VER );
 
 			$localize = array(
-				'ajax_nonce'   => wp_create_nonce( 'social-widget-nonce' ),
-				'activate'     => esc_html__( 'Activate', 'social-elementor' ),
-				'deactivate'   => esc_html__( 'Deactivate', 'social-elementor' ),
+				'ajax_nonce' => wp_create_nonce( 'social-widget-nonce' ),
+				'activate'   => esc_html__( 'Activate', 'social-elementor' ),
+				'deactivate' => esc_html__( 'Deactivate', 'social-elementor' ),
 			);
 
 			wp_localize_script( 'social-admin-settings', 'social', apply_filters( 'social_js_localize', $localize ) );
@@ -312,6 +312,4 @@ if ( ! class_exists( 'Social_Admin' ) ) {
 	}
 
 	Social_Admin::init();
-
 }
-

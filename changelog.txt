@@ -1,5 +1,15 @@
-Version 1.0.0
-- New: Introduced Blog Posts
+Version 1.2.0 - Sunday, 12th December 2020
+- New: Introduced Social Icons
+
+Version 1.1.0 - Sunday, 02nd July 2020
+- Improvement: Provided Font Awesome 5 Icons and SVG support.
+- Improvement: Filter to update CTA Read More text from Blog widget - ('social_blog_post_cta_text')
+- Fix: After Icon Position not working in Blog Widget.
+- Fix: 404 console errors for missing CSS assets files.
+- Tweak: Admin page design Improvement.
 
 Version 1.0.1
 - Improvement: Replaced hash links with valid brand links
+
+Version 1.0.0
+- New: Introduced Blog Posts

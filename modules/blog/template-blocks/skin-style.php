@@ -9,6 +9,7 @@ namespace SocialElementor\Modules\Blog\TemplateBlocks;
 
 use Elementor\Group_Control_Image_Size;
 use Elementor\Utils;
+use SocialElementor\Classes\Social_Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -18,7 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Class Skin_Base
  */
 abstract class Skin_Style {
-
 
 	/**
 	 * Query object
@@ -132,19 +132,19 @@ abstract class Skin_Style {
 
 			switch ( $seq ) {
 				case 'author':
-					if ( in_array( 'author', $_f_meta ) ) {
+					if ( in_array( 'author', $_f_meta, true ) ) {
 						$this->render_author();
 					}
 					break;
 
 				case 'date':
-					if ( in_array( 'date', $_f_meta ) ) {
+					if ( in_array( 'date', $_f_meta, true ) ) {
 						$this->render_date();
 					}
 					break;
 
 				case 'comments':
-					if ( in_array( 'comment', $_f_meta ) ) {
+					if ( in_array( 'comment', $_f_meta, true ) ) {
 						$this->render_comments();
 					}
 					break;
@@ -156,7 +156,7 @@ abstract class Skin_Style {
 						}
 					}
 
-					if ( in_array( 'category', $_f_meta ) ) {
+					if ( in_array( 'category', $_f_meta, true ) ) {
 						$terms  = wp_get_post_terms( get_the_ID(), 'category' );
 						$prefix = 'cat';
 						$this->get_meta_html_by_prefix( $terms, $prefix );
@@ -170,7 +170,7 @@ abstract class Skin_Style {
 						}
 					}
 
-					if ( in_array( 'tag', $_f_meta ) ) {
+					if ( in_array( 'tag', $_f_meta, true ) ) {
 						$terms  = wp_get_post_terms( get_the_ID(), 'post_tag' );
 						$prefix = 'tag';
 						$this->get_meta_html_by_prefix( $terms, $prefix );
@@ -216,8 +216,8 @@ abstract class Skin_Style {
 			return;
 		}
 
-		add_filter( 'excerpt_length', [ $this, 'social_posts_featured_excerpt_length_filter' ], 20 );
-		add_filter( 'excerpt_more', [ $this, 'social_posts_excerpt_more_filter' ], 20 );
+		add_filter( 'excerpt_length', array( $this, 'social_posts_featured_excerpt_length_filter' ), 20 );
+		add_filter( 'excerpt_more', array( $this, 'social_posts_excerpt_more_filter' ), 20 );
 
 		do_action( 'social_elementor_single_post_before_excerpt', get_the_ID(), $settings );
 		?>
@@ -226,8 +226,8 @@ abstract class Skin_Style {
 		</div>
 		<?php
 
-		remove_filter( 'excerpt_length', [ $this, 'social_posts_featured_excerpt_length_filter' ], 20 );
-		remove_filter( 'excerpt_more', [ $this, 'social_posts_excerpt_more_filter' ], 20 );
+		remove_filter( 'excerpt_length', array( $this, 'social_posts_featured_excerpt_length_filter' ), 20 );
+		remove_filter( 'excerpt_more', array( $this, 'social_posts_excerpt_more_filter' ), 20 );
 
 		do_action( 'social_elementor_single_post_after_excerpt', get_the_ID(), $settings );
 	}
@@ -265,9 +265,9 @@ abstract class Skin_Style {
 			return;
 		}
 
-		$settings['image'] = [
+		$settings['image'] = array(
 			'id' => get_post_thumbnail_id(),
-		];
+		);
 
 		$settings['image_size'] = $this->get_instance_value( 'image_size' );
 
@@ -431,14 +431,33 @@ abstract class Skin_Style {
 
 		$unlink_meta = $this->get_instance_value( 'link_meta' );
 
-		$icon = $this->get_instance_value( 'show_author_icon' );
 		do_action( 'social_elementor_single_post_before_author', get_the_ID(), $settings );
 		?>
 		<span class="social-blog-post-author">
-			<?php if ( '' != $icon ) { ?>
-			<i class="<?php echo $icon; ?>"></i>
-			<?php } ?>
 			<?php
+			$icon     = $this->get_instance_value( 'show_author_icon' );
+			$new_icon = $this->get_instance_value( 'new_show_author_icon' );
+
+			if ( Social_Helper::is_elementor_updated() ) {
+
+				$author_migrated      = isset( $settings['__fa4_migrated'][ self::$skin . '_new_show_author_icon' ] );
+				$author_icon_is_empty = ! isset( $icon );
+				?>
+
+					<?php if ( ! empty( $icon ) || ! empty( $new_icon ) ) { ?>
+						<?php
+						if ( $author_migrated || $author_icon_is_empty ) {
+							\Elementor\Icons_Manager::render_icon( $new_icon, array( 'aria-hidden' => 'true' ) );
+						} elseif ( ! empty( $icon ) ) {
+							?>
+							<i class="<?php echo $icon; ?>" aria-hidden="true"></i>
+						<?php } ?>
+					<?php } ?>
+				<?php } elseif ( ! empty( $icon ) ) { ?>
+					<i class="<?php echo $icon; ?>" aria-hidden="true"></i>
+				<?php } ?>
+			<?php
+
 			if ( 'yes' == $this->get_instance_value( 'link_meta' ) ) {
 				the_author_posts_link();
 			} else {
@@ -462,13 +481,30 @@ abstract class Skin_Style {
 
 		$settings = self::$settings;
 
-		$icon = $this->get_instance_value( 'show_date_icon' );
 		do_action( 'social_elementor_single_post_before_date', get_the_ID(), $settings );
 		?>
 		<span class="social-blog-post-date">
-			<?php if ( '' != $icon ) { ?>
-			<i class="<?php echo $icon; ?>"></i>
-			<?php } ?>
+			<?php
+			$icon     = $this->get_instance_value( 'show_date_icon' );
+			$new_icon = $this->get_instance_value( 'new_show_date_icon' );
+
+			if ( Social_Helper::is_elementor_updated() ) {
+
+				$date_icon_migrated = isset( $settings['__fa4_migrated'][ self::$skin . '_new_show_date_icon' ] );
+				$date_icon_is_empty = ! isset( $icon );
+				?>
+				<?php if ( ! empty( $icon ) || ! empty( $new_icon ) ) { ?>
+						<?php
+						if ( $date_icon_migrated || $date_icon_is_empty ) {
+							\Elementor\Icons_Manager::render_icon( $new_icon, array( 'aria-hidden' => 'true' ) );
+						} elseif ( ! empty( $icon ) ) {
+							?>
+							<i class="<?php echo $icon; ?>" aria-hidden="true"></i>
+						<?php } ?>
+					<?php } ?>
+				<?php } elseif ( ! empty( $icon ) ) { ?>
+					<i class="<?php echo $icon; ?>" aria-hidden="true"></i>
+				<?php } ?>
 			<?php echo apply_filters( 'social_blog_post_date_format', get_the_date(), get_the_ID(), get_option( 'date_format' ), '', '' ); ?>
 		</span>
 		<?php
@@ -487,12 +523,26 @@ abstract class Skin_Style {
 
 		$settings = self::$settings;
 
-		$icon = $this->get_instance_value( 'show_comments_icon' );
+		$icon     = $this->get_instance_value( 'show_comments_icon' );
+		$new_icon = $this->get_instance_value( 'new_show_comments_icon' );
+
 		do_action( 'social_elementor_single_post_before_comments', get_the_ID(), $settings );
 		?>
 		<span class="social-blog-post-comments">
-			<?php if ( '' != $icon ) { ?>
-			<i class="<?php echo $icon; ?>"></i>
+			<?php if ( Social_Helper::is_elementor_updated() ) { ?>
+				<?php if ( ! empty( $icon ) || ! empty( $new_icon ) ) { ?>
+					<?php
+					$comments_migrated      = isset( $settings['__fa4_migrated'][ self::$skin . '_new_show_comments_icon' ] );
+					$comments_icon_is_empty = ! isset( $icon );
+					if ( $comments_migrated || $comments_icon_is_empty ) {
+						\Elementor\Icons_Manager::render_icon( $new_icon, array( 'aria-hidden' => 'true' ) );
+					} elseif ( ! empty( $icon ) ) {
+						?>
+						<i class="<?php echo $icon; ?>" aria-hidden="true"></i>
+					<?php } ?>
+				<?php } ?>
+			<?php } elseif ( ! empty( $icon ) ) { ?>
+				<i class="<?php echo $icon; ?>" aria-hidden="true"></i>
 			<?php } ?>
 			<?php comments_number(); ?>
 		</span>
@@ -544,7 +594,8 @@ abstract class Skin_Style {
 			$terms = array_slice( $terms, 0, $num );
 		}
 
-		$icon = $this->get_instance_value( $prefix . '_meta_show_term_icon' );
+		$icon     = $this->get_instance_value( $prefix . '_meta_show_term_icon' );
+		$new_icon = $this->get_instance_value( 'new_' . $prefix . '_meta_show_term_icon' );
 
 		$link_meta = apply_filters( 'social_posts_taxomony_badge_link', $this->get_instance_value( 'link_meta' ) );
 
@@ -556,8 +607,22 @@ abstract class Skin_Style {
 
 		$result = '';
 
-		if ( '' != $icon ) {
-			$result .= '<i class="' . $icon . '"></i> ';
+		if ( Social_Helper::is_elementor_updated() ) {
+			if ( ! empty( $icon ) || ! empty( $new_icon ) ) {
+
+				$meta_migrated      = isset( $settings['__fa4_migrated'][ self::$skin . '_new_' . $prefix . '_meta_show_term_icon' ] );
+				$meta_icon_is_empty = ! isset( $icon );
+
+				if ( $meta_migrated || $meta_icon_is_empty ) {
+					ob_start();
+					\Elementor\Icons_Manager::render_icon( $new_icon, array( 'aria-hidden' => 'true' ) );
+					$result .= ob_get_clean();
+				} elseif ( ! empty( $icon ) ) {
+					$result .= '<i class="' . $icon . '" aria-hidden="true"></i>';
+				}
+			}
+		} elseif ( ! empty( $icon ) ) {
+			$result .= '<i class="' . $icon . '" aria-hidden="true"></i>';
 		}
 
 		foreach ( $terms as $term ) {
@@ -613,8 +678,6 @@ abstract class Skin_Style {
 
 		$terms = apply_filters( 'social_posts_tax_filters', $terms );
 
-		$icon = $this->get_instance_value( 'show_term_icon' );
-
 		$link_meta = apply_filters( 'social_posts_taxomony_badge_link', $this->get_instance_value( 'link_meta' ) );
 
 		if ( 'yes' == $link_meta ) {
@@ -625,8 +688,25 @@ abstract class Skin_Style {
 
 		$result = '';
 
-		if ( '' != $icon ) {
-			$result .= '<i class="' . $icon . '"></i> ';
+		$icon     = $this->get_instance_value( 'show_term_icon' );
+		$new_icon = $this->get_instance_value( 'new_show_term_icon' );
+
+		if ( Social_Helper::is_elementor_updated() ) {
+
+			$terms_migrated      = isset( $settings['__fa4_migrated'][ self::$skin . '_new_show_term_icon' ] );
+			$terms_icon_is_empty = ! isset( $icon );
+
+			if ( ! empty( $icon ) || ! empty( $new_icon ) ) {
+				if ( $terms_migrated || $terms_icon_is_empty ) {
+					ob_start();
+					\Elementor\Icons_Manager::render_icon( $new_icon, array( 'aria-hidden' => 'true' ) );
+					$result .= ob_get_clean();
+				} elseif ( ! empty( $icon ) ) {
+					$result .= '<i class="' . $icon . '" aria-hidden="true"></i>';
+				}
+			}
+		} elseif ( ! empty( $icon ) ) {
+			$result .= '<i class="' . $icon . '" aria-hidden="true"></i>';
 		}
 
 		foreach ( $terms as $term ) {
@@ -681,8 +761,8 @@ abstract class Skin_Style {
 			return;
 		}
 
-		add_filter( 'excerpt_length', [ $this, 'social_posts_excerpt_length_filter' ], 20 );
-		add_filter( 'excerpt_more', [ $this, 'social_posts_excerpt_more_filter' ], 20 );
+		add_filter( 'excerpt_length', array( $this, 'social_posts_excerpt_length_filter' ), 20 );
+		add_filter( 'excerpt_more', array( $this, 'social_posts_excerpt_more_filter' ), 20 );
 
 		do_action( 'social_elementor_single_post_before_excerpt', get_the_ID(), $settings );
 		?>
@@ -693,8 +773,8 @@ abstract class Skin_Style {
 
 		<?php
 
-		remove_filter( 'excerpt_length', [ $this, 'social_posts_excerpt_length_filter' ], 20 );
-		remove_filter( 'excerpt_more', [ $this, 'social_posts_excerpt_more_filter' ], 20 );
+		remove_filter( 'excerpt_length', array( $this, 'social_posts_excerpt_length_filter' ), 20 );
+		remove_filter( 'excerpt_more', array( $this, 'social_posts_excerpt_more_filter' ), 20 );
 
 		do_action( 'social_elementor_single_post_after_excerpt', get_the_ID(), $settings );
 	}
@@ -718,38 +798,55 @@ abstract class Skin_Style {
 			$this->add_render_attribute(
 				'icon' . get_the_ID(),
 				'class',
-				[
+				array(
 					'elementor-button-icon',
 					'elementor-align-icon-' . $this->get_instance_value( 'cta_icon_align' ),
-				]
+				)
 			);
 
 			$this->add_render_attribute(
 				'cta_link' . get_the_ID(),
-				[
-					'class'  => [
+				array(
+					'class'  => array(
 						'social-blog-post-read-more-btn',
 						'elementor-button',
-					],
+					),
 					'href'   => apply_filters( 'social_single_post_permalink', get_the_permalink(), get_the_ID(), $settings ),
-					'target' => ( 'yes' == $this->get_instance_value( 'cta_new_tab' ) ) ? '_blank' : '_self',
-				]
+					'target' => ( 'yes' === $this->get_instance_value( 'cta_new_tab' ) ) ? '_blank' : '_self',
+				)
 			);
 
 			?>
 				<a <?php echo $this->get_render_attribute_string( 'cta_link' . get_the_ID() ); ?>>
+					<span class="elementor-button-content-wrapper">
+						<?php
+						$icon     = $this->get_instance_value( 'cta_icon' );
+						$new_icon = $this->get_instance_value( 'new_cta_icon' );
 
-					<?php if ( ! empty( $this->get_instance_value( 'cta_icon' ) ) ) : ?>
+						if ( Social_Helper::is_elementor_updated() ) {
+							if ( ! empty( $icon ) || ! empty( $new_icon ) ) :
+								$cta_icon_migrated = isset( $settings['__fa4_migrated'][ self::$skin . '_new_cta_icon' ] );
+								$cta_icon_is_empty = empty( $icon );
+								?>
+								<span <?php echo $this->get_render_attribute_string( 'icon' . get_the_ID() ); ?>>
 
-					<span <?php echo $this->get_render_attribute_string( 'icon' . get_the_ID() ); ?>>
+									<?php
+									if ( $cta_icon_migrated || $cta_icon_is_empty ) {
+										\Elementor\Icons_Manager::render_icon( $new_icon, array( 'aria-hidden' => 'true' ) );
+									} else {
+										?>
+										<i class="<?php echo esc_attr( $icon ); ?>" aria-hidden="true"></i>
+									<?php } ?>
 
-						<i class="<?php echo esc_attr( $this->get_instance_value( 'cta_icon' ) ); ?>" aria-hidden="true"></i>
-
+								</span>
+							<?php endif; ?>
+						<?php } elseif ( ! empty( $icon ) ) { ?>
+							<span <?php echo $this->get_render_attribute_string( 'icon' . get_the_ID() ); ?>>
+								<i class="<?php echo esc_attr( $icon ); ?>" aria-hidden="true"></i>
+							</span>						
+						<?php } ?>
+						<span class="elementor-button-text"><?php echo wp_kses_post( apply_filters( 'social_blog_post_cta_text', $this->get_instance_value( 'cta_text' ), get_the_ID(), $settings ) ); ?></span>
 					</span>
-
-					<?php endif; ?>
-
-					<span><?php echo $this->get_instance_value( 'cta_text' ); ?></span>
 				</a>
 			<?php
 			do_action( 'social_elementor_single_post_after_cta', get_the_ID(), $settings );
@@ -871,13 +968,13 @@ abstract class Skin_Style {
 
 				if ( 'IN' == $filter_type ) {
 
-					if ( in_array( $value->slug, $filters ) ) {
+					if ( in_array( $value->slug, $filters, true ) ) {
 
 						$filter_array[] = $value;
 					}
 				} else {
 
-					if ( ! in_array( $value->slug, $filters ) ) {
+					if ( ! in_array( $value->slug, $filters, true ) ) {
 
 						$filter_array[] = $value;
 					}
@@ -935,10 +1032,10 @@ abstract class Skin_Style {
 
 		$is_rtl      = is_rtl();
 		$direction   = $is_rtl ? 'rtl' : 'ltr';
-		$show_dots   = ( in_array( $this->get_instance_value( 'navigation' ), [ 'dots', 'both' ] ) );
-		$show_arrows = ( in_array( $this->get_instance_value( 'navigation' ), [ 'arrows', 'both' ] ) );
+		$show_dots   = ( in_array( $this->get_instance_value( 'navigation' ), array( 'dots', 'both' ), true ) );
+		$show_arrows = ( in_array( $this->get_instance_value( 'navigation' ), array( 'arrows', 'both' ), true ) );
 
-		$slick_options = [
+		$slick_options = array(
 			'slidesToShow'   => ( $this->get_instance_value( 'slides_to_show' ) ) ? absint( $this->get_instance_value( 'slides_to_show' ) ) : 4,
 			'slidesToScroll' => ( $this->get_instance_value( 'slides_to_scroll' ) ) ? absint( $this->get_instance_value( 'slides_to_scroll' ) ) : 1,
 			'autoplaySpeed'  => ( $this->get_instance_value( 'autoplay_speed' ) ) ? absint( $this->get_instance_value( 'autoplay_speed' ) ) : 5000,
@@ -951,24 +1048,24 @@ abstract class Skin_Style {
 			'rtl'            => $is_rtl,
 			'prevArrow'      => '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button"><i class="fa fa-angle-left"></i></button>',
 			'nextArrow'      => '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button"><i class="fa fa-angle-right"></i></button>',
-		];
+		);
 
 		if ( $this->get_instance_value( 'slides_to_show_tablet' ) || $this->get_instance_value( 'slides_to_show_mobile' ) ) {
 
-			$slick_options['responsive'] = [];
+			$slick_options['responsive'] = array();
 
 			if ( $this->get_instance_value( 'slides_to_show_tablet' ) ) {
 
 				$tablet_show   = absint( $this->get_instance_value( 'slides_to_show_tablet' ) );
 				$tablet_scroll = ( $this->get_instance_value( 'slides_to_scroll_tablet' ) ) ? absint( $this->get_instance_value( 'slides_to_scroll_tablet' ) ) : $tablet_show;
 
-				$slick_options['responsive'][] = [
+				$slick_options['responsive'][] = array(
 					'breakpoint' => 1024,
-					'settings'   => [
+					'settings'   => array(
 						'slidesToShow'   => $tablet_show,
 						'slidesToScroll' => $tablet_scroll,
-					],
-				];
+					),
+				);
 			}
 
 			if ( $this->get_instance_value( 'slides_to_show_mobile' ) ) {
@@ -976,22 +1073,22 @@ abstract class Skin_Style {
 				$mobile_show   = absint( $this->get_instance_value( 'slides_to_show_mobile' ) );
 				$mobile_scroll = ( $this->get_instance_value( 'slides_to_scroll_mobile' ) ) ? absint( $this->get_instance_value( 'slides_to_scroll_mobile' ) ) : $mobile_show;
 
-				$slick_options['responsive'][] = [
+				$slick_options['responsive'][] = array(
 					'breakpoint' => 767,
-					'settings'   => [
+					'settings'   => array(
 						'slidesToShow'   => $mobile_show,
 						'slidesToScroll' => $mobile_scroll,
-					],
-				];
+					),
+				);
 			}
 		}
 
 		$this->add_render_attribute(
 			'social-post-slider',
-			[
+			array(
 				'data-post_slider'  => wp_json_encode( $slick_options ),
 				'data-equal-height' => $this->get_instance_value( 'equal_height' ),
-			]
+			)
 		);
 
 		return $this->get_render_attribute_string( 'social-post-slider' );
@@ -1019,7 +1116,7 @@ abstract class Skin_Style {
 			return;
 		}
 
-		if ( ! in_array( $this->get_instance_value( 'post_structure' ), [ 'masonry', 'normal' ] ) ) {
+		if ( ! in_array( $this->get_instance_value( 'post_structure' ), array( 'masonry', 'normal' ) ) ) {
 			return;
 		}
 
@@ -1028,11 +1125,11 @@ abstract class Skin_Style {
 		$all     = $this->get_instance_value( 'filters_all_text' );
 
 		?>
-		<div class="social-blog-post-header-filters-wrap<?php echo $tab_responsive; ?>">
+		<div class="social-blog-post-header-filters-wrap<?php echo esc_attr( $tab_responsive ); ?>">
 			<ul class="social-blog-post-header-filters">
 				<li class="social-blog-post-header-filter social-blog-post-active-filter" data-filter="*"><?php echo ( 'All' == $all || '' == $all ) ? esc_html__( 'All', 'social-elementor' ) : $all; ?></li>
 				<?php foreach ( $filters as $key => $value ) { ?>
-				<li class="social-blog-post-header-filter" data-filter="<?php echo '.' . $value->slug; ?>"><?php echo $value->name; ?></li>
+				<li class="social-blog-post-header-filter" data-filter="<?php echo '.' . esc_attr( $value->slug ); ?>"><?php echo esc_html( $value->name ); ?></li>
 				<?php } ?>
 			</ul>
 
@@ -1043,7 +1140,7 @@ abstract class Skin_Style {
 					<ul class="social-blog-post-dropdown-filters-list social-blog-post-header-filters">
 						<li class="social-blog-post-dropdown-filters-item social-blog-post-header-filter social-blog-post-active-filter" data-filter="*"><?php echo ( 'All' == $all || '' == $all ) ? esc_html__( 'All', 'social-elementor' ) : $all; ?></li>
 						<?php foreach ( $filters as $key => $value ) { ?>
-						<li class="social-blog-post-dropdown-filters-item social-blog-post-header-filter" data-filter="<?php echo '.' . $value->slug; ?>"><?php echo $value->name; ?></li>
+						<li class="social-blog-post-dropdown-filters-item social-blog-post-header-filter" data-filter="<?php echo '.' . esc_attr( $value->slug ); ?>"><?php echo esc_html( $value->name ); ?></li>
 						<?php } ?>
 					</ul>
 				</div>
@@ -1064,7 +1161,7 @@ abstract class Skin_Style {
 		$settings = self::$settings;
 		?>
 		<div class="social-blog-post-grid-empty">
-			<p><?php echo $settings['no_results_text']; ?></p>
+			<p><?php echo esc_html( $settings['no_results_text'] ); ?></p>
 			<?php if ( 'yes' == $settings['show_search_box'] ) { ?>
 				<?php get_search_form(); ?>
 			<?php } ?>
@@ -1082,12 +1179,12 @@ abstract class Skin_Style {
 	 */
 	public function get_wrapper_classes() {
 
-		$classes = [
+		$classes = array(
 			'social-blog-post-grid-inner',
 			'social-blog-post-cols-' . $this->get_instance_value( 'slides_to_show' ),
 			'social-blog-post-cols-tablet-' . $this->get_instance_value( 'slides_to_show_tablet' ),
 			'social-blog-post-cols-mobile-' . $this->get_instance_value( 'slides_to_show_mobile' ),
-		];
+		);
 
 		if ( 'masonry' === $this->get_instance_value( 'post_structure' ) ) {
 			$classes[] = 'social-blog-post-masonry';
@@ -1111,12 +1208,18 @@ abstract class Skin_Style {
 	 */
 	public function get_outer_wrapper_classes() {
 
-		$classes = [
+		$classes = array(
 			'social-blog-post-terms-position-' . $this->get_instance_value( 'terms_position' ),
 			'social-blog-post-img-' . $this->get_instance_value( 'image_position' ),
 			'social-blog-post-grid-layout',
 			'social-blog-posts',
-		];
+		);
+
+		if ( 'featured' === $this->get_instance_value( 'post_structure' ) ) {
+
+			$classes[] = 'social-blog-post-structure-' . $this->get_instance_value( 'post_structure' );
+			$classes[] = 'social-blog-featured-post-structure-' . $this->get_instance_value( 'featured_post' );
+		}
 
 		return apply_filters( 'social_posts_outer_wrapper_classes', $classes );
 	}
@@ -1312,7 +1415,7 @@ abstract class Skin_Style {
 		}
 
 		if ( empty( $this->_render_attributes[ $element ][ $key ] ) ) {
-			$this->_render_attributes[ $element ][ $key ] = [];
+			$this->_render_attributes[ $element ][ $key ] = array();
 		}
 
 		settype( $value, 'array' );
@@ -1346,7 +1449,7 @@ abstract class Skin_Style {
 
 		$render_attributes = $this->_render_attributes[ $element ];
 
-		$attributes = [];
+		$attributes = array();
 
 		foreach ( $render_attributes as $attribute_key => $attribute_values ) {
 			$attributes[] = sprintf( '%1$s="%2$s"', $attribute_key, esc_attr( implode( ' ', $attribute_values ) ) );

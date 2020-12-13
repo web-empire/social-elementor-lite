@@ -27,7 +27,7 @@ abstract class Common_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_categories() {
-		return [ 'social-elements' ];
+		return array( 'social-elements' );
 	}
 
 	/**
@@ -68,5 +68,28 @@ abstract class Common_Widget extends Widget_Base {
 	 */
 	public function get_widget_keywords( $slug = '' ) {
 		return Social_Helper::get_widget_keywords( $slug );
+	}
+
+	/**
+	 * Override from addon to add custom wrapper class.
+	 *
+	 * @return string
+	 */
+	protected function get_custom_wrapper_class() {
+		return '';
+	}
+
+	/**
+	 * Overriding default function to add custom classes as per functionality.
+	 *
+	 * @return string
+	 * @since x.x.x
+	 */
+	public function get_html_wrapper_class() {
+		$html_class  = parent::get_html_wrapper_class();
+		$html_class .= ' social-addon';
+		$html_class .= ' ' . $this->get_name();
+		$html_class .= ' ' . $this->get_custom_wrapper_class();
+		return rtrim( $html_class );
 	}
 }

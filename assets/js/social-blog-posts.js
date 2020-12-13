@@ -326,9 +326,8 @@
 				}
 
 				if ( true == $append ) {
-
-					var html_str = data.data.html;
-					html_str = html_str.replace( 'social-blog-post-wrapper-featured', '' );
+					var html_str = data.data.html,
+						html_str = html_str.replace( 'social-blog-post-wrapper-featured', '' );
 					sel.append( html_str );
 				} else {
 					sel.html( data.data.html );
@@ -337,7 +336,7 @@
 				$scope.find( '.social-blog-post-footer' ).html( data.data.pagination );
 
 				var layout = $scope.find( '.social-blog-post-grid-layout' ).data( 'layout' ),
-					structure = $scope.find( '.social-blog-post-grid-layout' ).data( 'structure' );
+					structure = $scope.find( '.social-blog-post-grid-layout' ).data( 'structure' ),
 					selector = $scope.find( '.social-blog-post-grid-inner' );
 
 				if (
@@ -345,11 +344,12 @@
 					'' != layout
 				) {
 
-					$scope.imagesLoaded( function() {
-						selector.isotope( 'destroy' );
+					$scope.imagesLoaded( function(e) {
+						selector.isotope( 'reloadItems' );
 						selector.isotope({
 							layoutMode: layout,
 							itemSelector: '.social-blog-post-wrapper',
+							animate: false,
 						});
 					});
 				}
@@ -375,13 +375,6 @@
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/social-blog-posts.event', WidgetSocialPostGridHandler );
 
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/social-blog-posts.card', WidgetSocialPostGridHandler );
-
-		elementorFrontend.hooks.addAction( 'frontend/element_ready/social-blog-posts.feed', WidgetSocialPostGridHandler );
-
-		elementorFrontend.hooks.addAction( 'frontend/element_ready/social-blog-posts.news', WidgetSocialPostGridHandler );
-
-		elementorFrontend.hooks.addAction( 'frontend/element_ready/social-blog-posts.business', WidgetSocialPostGridHandler );
-
 	});
 
 } )( jQuery );

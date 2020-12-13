@@ -52,9 +52,9 @@ class Module extends Module_Base {
 	 * @return array Widgets.
 	 */
 	public function get_widgets() {
-		return [
-			'Blog' ,
-		];
+		return array(
+			'Blog',
+		);
 	}
 
 	/**
@@ -68,8 +68,8 @@ class Module extends Module_Base {
 		 *
 		 * @see https://codex.wordpress.org/Making_Custom_Queries_using_Offset_and_Pagination
 		 */
-		add_action( 'pre_get_posts', [ $this, 'fix_query_offset' ], 1 );
-		add_filter( 'found_posts', [ $this, 'fix_query_found_posts' ], 1, 2 );
+		add_action( 'pre_get_posts', array( $this, 'fix_query_offset' ), 1 );
+		add_filter( 'found_posts', array( $this, 'fix_query_found_posts' ), 1, 2 );
 	}
 
 	/**
