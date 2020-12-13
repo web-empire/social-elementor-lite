@@ -21,7 +21,7 @@ As this is a initial version it has a free and amazing widget:
 <ul>
  	<li> <strong> Post Grid </strong> The Post Grid block fetches the blog posts you may have on your website and displays them in a grid layout. You can customize the order of your posts, and manage settings like the featured image, content, custom query etc.</li>
  	<li> <strong> Post Masonry </strong> The Post Masonry block fetches the blog posts on your website and displays them in a masonry layout. You can customize the way your posts look and manage settings like the featured image, the content you want to display, etc.</li>
-  <li> <strong> Social Icons </strong> The Post Masonry block fetches the blog posts on your website and displays them in a masonry layout. You can customize the way your posts look and manage settings like the featured image, the content you want to display, etc.</li>
+  <li> <strong> Social Icons </strong> The Social Icons element empowers your social visibility & elegantly showcase your social connections. It’s advanced Separator & Sticky enabling option adds unique & powerful UI in your Social Connections.</li>
 </ul>
 
 <strong> Many More Blocks Coming Soon! </strong>
