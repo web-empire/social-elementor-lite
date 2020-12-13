@@ -21,22 +21,6 @@ $se_social_icon_sep_type = $settings['se_social_icon_sep_type'];
 $is_custom_separators    = $settings['custom_separator'];
 $separators              = $is_custom_separators ? $is_custom_separators : '';
 
-$hover_animation = '';
-
-if ( ! empty( $settings['social_icon_hover_animation'] ) ) {
-
-	if ( $settings['social_icon_hover_2d_animation'] ) {
-		$hover_animation = $settings['social_icon_hover_2d_animation'];
-	}
-
-	if ( $settings['social_icon_hover_bg_animation'] ) {
-		$hover_animation = $settings['social_icon_hover_bg_animation'];
-	}
-
-	if ( $settings['social_icon_hover_glowing_shadow_animation'] ) {
-		$hover_animation = $settings['social_icon_hover_glowing_shadow_animation'];
-	}
-}
 ?>
 <div class="se-social-icons-wrapper <?php echo $sticky_custom_selector; ?>">
 	<?php
@@ -56,7 +40,7 @@ if ( ! empty( $settings['social_icon_hover_animation'] ) ) {
 			'class',
 			array(
 				'se-social-icon',
-				'elementor-repeater-item-' . $icons['_id'] . ' ' . $hover_animation,
+				'elementor-repeater-item-' . $icons['_id'] . ' ',
 				'elementor-social-icon-' . ( $icon ? $social_name : 'label' ),
 			)
 		);
