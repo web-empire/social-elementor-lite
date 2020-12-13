@@ -184,15 +184,15 @@ class Social_Helper {
 	public static function get_link_rel( $target, $is_nofollow = 0, $echo = 0 ) {
 
 		$attr = '';
-		if ( '_blank' == $target ) {
+		if ( '_blank' === $target ) {
 			$attr .= 'noopener';
 		}
 
-		if ( 1 == $is_nofollow ) {
+		if ( 1 === $is_nofollow ) {
 			$attr .= ' nofollow';
 		}
 
-		if ( '' == $attr ) {
+		if ( '' === $attr ) {
 			return;
 		}
 
@@ -415,7 +415,7 @@ class Social_Helper {
 			return false;
 		}
 
-		$data = [];
+		$data = array();
 
 		if ( ! empty( $image_id ) ) { // Existing attachment.
 
@@ -439,5 +439,20 @@ class Social_Helper {
 		}
 
 		return $data;
+	}
+
+	/**
+	 * Check if the Elementor is updated with FA & SVG icons supported.
+	 *
+	 * @since 1.1.0
+	 *
+	 * @return boolean if Elementor builder updated.
+	 */
+	static public function is_elementor_updated() {
+		if ( class_exists( 'Elementor\Icons_Manager' ) ) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

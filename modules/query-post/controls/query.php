@@ -43,12 +43,12 @@ class Query extends Base_Data_Control {
 	 * @return array Settings.
 	 */
 	protected function get_default_settings() {
-		return [
+		return array(
 			'label_block' => true,
 			'multiple'    => false,
-			'options'     => [],
+			'options'     => array(),
 			'post_type'   => 'all',
-		];
+		);
 	}
 
 	/**
@@ -59,7 +59,7 @@ class Query extends Base_Data_Control {
 	 */
 	public function enqueue() {
 
-		wp_register_script( 'uaquery-control', SOCIAL_ELEMENTOR_URL . 'editor-assets/js/query-post.js', [ 'jquery' ], '1.0.0' );
+		wp_register_script( 'uaquery-control', SOCIAL_ELEMENTOR_URL . 'editor-assets/js/query-post.js', array( 'jquery' ), '1.0.0' );
 		wp_enqueue_script( 'uaquery-control' );
 	}
 

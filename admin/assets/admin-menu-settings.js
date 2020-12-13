@@ -115,11 +115,9 @@
 				data: data,
 				success: function(data){
 
-					console.log( data );
-
 					// Bulk add or remove classes to all modules.
-					$('.social-widget-list').children( "li" ).addClass( 'activate' ).removeClass( 'deactivate' );
-					$('.social-widget-list').children( "li" ).find('.social-activate-widget')
+					$('.social-widget-list').children( "li" ).not( '.is-pro-addon' ).addClass( 'activate' ).removeClass( 'deactivate' );
+					$('.social-widget-list').children( "li" ).not( '.is-pro-addon' ).find('.social-activate-widget')
 						.addClass('social-deactivate-widget')
 						.text(social.deactivate)
 						.removeClass('social-activate-widget');
@@ -153,13 +151,13 @@
 
 					console.log( data );
 					// Bulk add or remove classes to all modules.
-					$('.social-widget-list').children( "li" ).addClass( 'deactivate' ).removeClass( 'activate' );
-					$('.social-widget-list').children( "li" ).find('.social-deactivate-widget')
+					$('.social-widget-list').children( "li" ).not( '.is-pro-addon' ).addClass( 'deactivate' ).removeClass( 'activate' );
+					$('.social-widget-list').children( "li" ).not( '.is-pro-addon' ).find('.social-deactivate-widget')
 						.addClass('social-activate-widget')
 						.text(social.activate)
 						.removeClass('social-deactivate-widget');
-						$( button ).removeClass('updating-message');
-					}
+					$( button ).removeClass('updating-message');
+				}
 			});
 			e.preventDefault();
 		},

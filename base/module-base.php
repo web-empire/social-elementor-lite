@@ -7,6 +7,7 @@
 
 namespace SocialElementor\Base;
 
+use Elementor\Element_Base;
 use SocialElementor\Classes\Social_Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -32,7 +33,7 @@ abstract class Module_Base {
 	 *
 	 * @var instances
 	 */
-	protected static $instances = [];
+	protected static $instances = array();
 
 	/**
 	 * Get Name
@@ -70,11 +71,12 @@ abstract class Module_Base {
 	 * @return static
 	 */
 	public static function instance() {
-		if ( empty( static::$instances[ static::class_name() ] ) ) {
-			static::$instances[ static::class_name() ] = new static();
+		$class_name = static::class_name();
+		if ( empty( static::$instances[ $class_name ] ) ) {
+			static::$instances[ $class_name ] = new static();
 		}
 
-		return static::$instances[ static::class_name() ];
+		return static::$instances[ $class_name ];
 	}
 
 	/**
@@ -83,7 +85,28 @@ abstract class Module_Base {
 	public function __construct() {
 		$this->reflection = new \ReflectionClass( $this );
 
-		add_action( 'elementor/widgets/widgets_registered', [ $this, 'init_widgets' ] );
+		add_action( 'elementor/widgets/widgets_registered', array( $this, 'init_widgets' ) );
+		add_action( 'elementor/frontend/before_render', array( $this, 'custom_widget_render_attributes' ) );
+	}
+
+	/**
+	 * Update global widget attributes as per convinience & to make it easier.
+	 *
+	 * @param object $widget of Element_Base.
+	 * @since x.x.x
+	 */
+	public function custom_widget_render_attributes( Element_Base $widget ) {
+		if ( $widget->get_data( 'widgetType' ) === 'global' && method_exists( $widget, 'get_original_element_instance' ) ) {
+			$original_instance = $widget->get_original_element_instance();
+			if ( method_exists( $original_instance, 'get_html_wrapper_class' ) && strpos( $original_instance->get_data( 'widgetType' ), 'social-' ) !== false ) {
+				$widget->add_render_attribute(
+					'_wrapper',
+					array(
+						'class' => $original_instance->get_html_wrapper_class(),
+					)
+				);
+			}
+		}
 	}
 
 	/**
@@ -114,6 +137,6 @@ abstract class Module_Base {
 	 * @return array
 	 */
 	public function get_widgets() {
-		return [];
+		return array();
 	}
 }

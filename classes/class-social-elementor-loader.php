@@ -72,11 +72,11 @@ if ( ! class_exists( 'Social_Elementor_Loader' ) ) {
 			define( 'SOCIAL_ELEMENTOR_ROOT', dirname( SOCIAL_ELEMENTOR_BASE ) );
 			define( 'SOCIAL_ELEMENTOR_DIR', plugin_dir_path( SOCIAL_ELEMENTOR_FILE ) );
 			define( 'SOCIAL_ELEMENTOR_URL', plugins_url( '/', SOCIAL_ELEMENTOR_FILE ) );
-			define( 'SOCIAL_ELEMENTOR_VER', '1.0.1' );
+			define( 'SOCIAL_ELEMENTOR_VER', '1.2.0' );
 			define( 'SOCIAL_ELEMENTOR_MODULE_DIR', SOCIAL_ELEMENTOR_DIR . 'modules/' );
 			define( 'SOCIAL_ELEMENTOR_MODULE_URL', SOCIAL_ELEMENTOR_URL . 'modules/' );
 			define( 'SOCIAL_ELEMENTOR_SLUG', 'social-elementor' );
-			define( 'SOCIAL_ELEMENTOR_CATEGORY', 'Social & Blog Posts Addons' );
+			define( 'SOCIAL_ELEMENTOR_CATEGORY', 'Social Addons' );
 		}
 
 		/**
@@ -138,10 +138,10 @@ if ( ! class_exists( 'Social_Elementor_Loader' ) ) {
 			$class = 'social-elementor-notice notice notice-error';
 			/* translators: %s: html tags */
 
-			$site_icon = esc_url( SOCIAL_ELEMENTOR_URL . 'admin/assets/images/Siteicon.png' );
+			$site_icon        = esc_url( SOCIAL_ELEMENTOR_URL . 'admin/assets/images/Siteicon.png' );
 			$site_icon_markup = '<img src="' . $site_icon . '" class="social-elementor-notice-icon" alt="WebEmpire" title="WebEmpire" >';
-			$message = sprintf( esc_html__( '%1$s Thanks for choosing Social Addon for Elementor plugin!!! %2$s %3$s', 'social-elementor' ), '<strong>', '</strong>', '<br/>' );
-			$message .= sprintf( esc_html__( 'Please install and activate the Elementor plugin, to explore the features of this plugin.', 'social-elementor' ), '<strong>', '</strong>' );
+			$message          = sprintf( /* translators: %1$s: html tag, %2$s: html tag, %1$s: html tag */ esc_html__( '%1$s Thanks for choosing Social Addon for Elementor plugin!!! %2$s %3$s', 'social-elementor' ), '<strong>', '</strong>', '<br/>' );
+			$message         .= sprintf( esc_html__( 'Please install and activate the Elementor plugin, to explore the features of this plugin.', 'social-elementor' ), '<strong>', '</strong>' );
 
 			$plugin = 'elementor/elementor.php';
 

@@ -12,7 +12,6 @@ use SocialElementor\Base\Common_Widget;
 
 use SocialElementor\Classes\Social_Posts_Helper;
 
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -50,13 +49,13 @@ abstract class Blog_Base extends Common_Widget {
 	 */
 	public function get_script_depends() {
 
-		return [
+		return array(
 			'imagesloaded',
 			'jquery-slick',
 			'social-elementor-isotope',
 			'social-blog-posts',
 			'social-elementor-element-resize',
-		];
+		);
 	}
 
 	/**
@@ -98,10 +97,10 @@ abstract class Blog_Base extends Common_Widget {
 
 		$this->start_controls_section(
 			'section_layout',
-			[
+			array(
 				'label' => __( 'Layout', 'social-elementor' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
-			]
+			)
 		);
 
 		$this->end_controls_section();
@@ -119,41 +118,41 @@ abstract class Blog_Base extends Common_Widget {
 
 		$this->start_controls_section(
 			'section_filter_field',
-			[
+			array(
 				'label' => __( 'Query', 'social-elementor' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
-			]
+			)
 		);
 
 			$this->add_control(
 				'query_type',
-				[
+				array(
 					'label'       => __( 'Query Type', 'social-elementor' ),
 					'type'        => Controls_Manager::SELECT,
 					'default'     => 'custom',
 					'label_block' => true,
-					'options'     => [
+					'options'     => array(
 						'main'   => __( 'Main Query', 'social-elementor' ),
 						'custom' => __( 'Custom Query', 'social-elementor' ),
-					],
-				]
+					),
+				)
 			);
 
 			$post_types = Social_Posts_Helper::get_post_types();
 
 			$this->add_control(
 				'post_type_filter',
-				[
+				array(
 					'label'       => __( 'Post Type', 'social-elementor' ),
 					'type'        => Controls_Manager::SELECT,
 					'default'     => 'post',
 					'label_block' => true,
 					'options'     => $post_types,
 					'separator'   => 'after',
-					'condition'   => [
+					'condition'   => array(
 						'query_type' => 'custom',
-					],
-				]
+					),
+				)
 			);
 
 		foreach ( $post_types as $key => $type ) {
@@ -168,7 +167,7 @@ abstract class Blog_Base extends Common_Widget {
 
 					$terms = get_terms( $index );
 
-					$related_tax = [];
+					$related_tax = array();
 
 					if ( ! empty( $terms ) ) {
 
@@ -178,29 +177,29 @@ abstract class Blog_Base extends Common_Widget {
 						}
 						$this->add_control(
 							$index . '_' . $key . '_filter_rule',
-							[
+							array(
 								/* translators: %s Label */
 								'label'       => sprintf( __( '%s Filter Rule', 'social-elementor' ), $tax->label ),
 								'type'        => Controls_Manager::SELECT,
 								'default'     => 'IN',
 								'label_block' => true,
-								'options'     => [
+								'options'     => array(
 									/* translators: %s label */
 									'IN'     => sprintf( __( 'Match %s', 'social-elementor' ), $tax->label ),
 									/* translators: %s label */
 									'NOT IN' => sprintf( __( 'Exclude %s', 'social-elementor' ), $tax->label ),
-								],
-								'condition'   => [
+								),
+								'condition'   => array(
 									'post_type_filter' => $key,
 									'query_type'       => 'custom',
-								],
-							]
+								),
+							)
 						);
 
 						// Add control for all taxonomies.
 						$this->add_control(
 							'tax_' . $index . '_' . $key . '_filter',
-							[
+							array(
 								/* translators: %s label */
 								'label'       => sprintf( __( '%s Filter', 'social-elementor' ), $tax->label ),
 								'type'        => Controls_Manager::SELECT2,
@@ -208,12 +207,12 @@ abstract class Blog_Base extends Common_Widget {
 								'default'     => '',
 								'label_block' => true,
 								'options'     => $related_tax,
-								'condition'   => [
+								'condition'   => array(
 									'post_type_filter' => $key,
 									'query_type'       => 'custom',
-								],
+								),
 								'separator'   => 'after',
-							]
+							)
 						);
 
 					}
@@ -222,24 +221,24 @@ abstract class Blog_Base extends Common_Widget {
 		}
 			$this->add_control(
 				'author_filter_rule',
-				[
+				array(
 					'label'       => __( 'Author Filter Rule', 'social-elementor' ),
 					'type'        => Controls_Manager::SELECT,
 					'default'     => 'author__in',
 					'label_block' => true,
-					'options'     => [
+					'options'     => array(
 						'author__in'     => __( 'Match Author', 'social-elementor' ),
 						'author__not_in' => __( 'Exclude Author', 'social-elementor' ),
-					],
-					'condition'   => [
+					),
+					'condition'   => array(
 						'query_type' => 'custom',
-					],
-				]
+					),
+				)
 			);
 
 			$this->add_control(
 				'author_filter',
-				[
+				array(
 					'label'       => __( 'Author Filter', 'social-elementor' ),
 					'type'        => Controls_Manager::SELECT2,
 					'multiple'    => true,
@@ -247,119 +246,119 @@ abstract class Blog_Base extends Common_Widget {
 					'label_block' => true,
 					'options'     => Social_Posts_Helper::get_users(),
 					'separator'   => 'after',
-					'condition'   => [
+					'condition'   => array(
 						'query_type' => 'custom',
-					],
-				]
+					),
+				)
 			);
 
 			$this->add_control(
 				'post_filter_rule',
-				[
+				array(
 					'label'       => __( 'Post Filter Rule', 'social-elementor' ),
 					'type'        => Controls_Manager::SELECT,
 					'default'     => 'post__in',
 					'label_block' => true,
-					'options'     => [
+					'options'     => array(
 						'post__in'     => __( 'Match Posts', 'social-elementor' ),
 						'post__not_in' => __( 'Exclude Posts', 'social-elementor' ),
-					],
-					'condition'   => [
+					),
+					'condition'   => array(
 						'query_type' => 'custom',
-					],
-				]
+					),
+				)
 			);
 
 			$this->add_control(
 				'post_filter',
-				[
+				array(
 					'label'       => __( 'Post Filter', 'social-elementor' ),
 					'type'        => 'social-blog-posts-query',
 					'post_type'   => 'all',
 					'multiple'    => true,
 					'label_block' => true,
 					'separator'   => 'after',
-					'condition'   => [
+					'condition'   => array(
 						'query_type' => 'custom',
-					],
-				]
+					),
+				)
 			);
 
 			$this->add_control(
 				'orderby_heading',
-				[
+				array(
 					'label'     => __( 'Post Order', 'social-elementor' ),
 					'type'      => Controls_Manager::HEADING,
-					'condition' => [
+					'condition' => array(
 						'query_type' => 'custom',
-					],
+					),
 					'separator' => 'before',
-				]
+				)
 			);
 
 			$this->add_control(
 				'orderby',
-				[
+				array(
 					'label'     => __( 'Order by', 'social-elementor' ),
 					'type'      => Controls_Manager::SELECT,
 					'default'   => 'date',
-					'options'   => [
+					'options'   => array(
 						'date'       => __( 'Date', 'social-elementor' ),
 						'title'      => __( 'Title', 'social-elementor' ),
 						'rand'       => __( 'Random', 'social-elementor' ),
 						'menu_order' => __( 'Menu Order', 'social-elementor' ),
-					],
-					'condition' => [
+					),
+					'condition' => array(
 						'query_type' => 'custom',
-					],
-				]
+					),
+				)
 			);
 
 			$this->add_control(
 				'order',
-				[
+				array(
 					'label'     => __( 'Order', 'social-elementor' ),
 					'type'      => Controls_Manager::SELECT,
 					'default'   => 'desc',
-					'options'   => [
+					'options'   => array(
 						'desc' => __( 'Descending', 'social-elementor' ),
 						'asc'  => __( 'Ascending', 'social-elementor' ),
-					],
-					'condition' => [
+					),
+					'condition' => array(
 						'query_type' => 'custom',
-					],
-				]
+					),
+				)
 			);
 
 			$this->add_control(
 				'noposts_heading',
-				[
+				array(
 					'label'     => __( 'If Posts Not Found', 'social-elementor' ),
 					'type'      => Controls_Manager::HEADING,
 					'separator' => 'before',
-				]
+				)
 			);
 
 			$this->add_control(
 				'no_results_text',
-				[
+				array(
 					'label'       => __( 'Display Message', 'social-elementor' ),
 					'type'        => Controls_Manager::TEXT,
 					'label_block' => true,
 					'default'     => __( 'Sorry, we couldn\'t find any posts. Please try a different search.', 'social-elementor' ),
-				]
+				)
 			);
 
 			$this->add_control(
 				'show_search_box',
-				[
+				array(
 					'label'        => __( 'Search Box', 'social-elementor' ),
 					'type'         => Controls_Manager::SWITCHER,
 					'label_on'     => __( 'Yes', 'social-elementor' ),
 					'label_off'    => __( 'No', 'social-elementor' ),
 					'return_value' => 'yes',
 					'default'      => 'no',
-				]
+				)
 			);
 
 		$this->end_controls_section();

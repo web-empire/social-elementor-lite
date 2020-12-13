@@ -56,9 +56,9 @@ class Skin_Classic extends Skin_Base {
 
 		parent::_register_controls_actions();
 
-		add_action( 'elementor/element/social-blog-posts/classic_section_design_blog/before_section_end', [ $this, 'update_blog_controls' ] );
+		add_action( 'elementor/element/social-blog-posts/classic_section_design_blog/before_section_end', array( $this, 'update_blog_controls' ) );
 
-		add_action( 'elementor/element/social-blog-posts/classic_section_general_field/before_section_end', [ $this, 'update_general_controls' ] );
+		add_action( 'elementor/element/social-blog-posts/classic_section_general_field/before_section_end', array( $this, 'update_general_controls' ) );
 	}
 
 	/**
@@ -71,18 +71,18 @@ class Skin_Classic extends Skin_Base {
 
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
-			[
+			array(
 				'name'     => 'content_border',
 				'selector' => '{{WRAPPER}} .social-blog-post-bg-wrapper',
-			]
+			)
 		);
 
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
-			[
+			array(
 				'name'     => 'classic_box_shadow',
 				'selector' => '{{WRAPPER}} .social-blog-post-bg-wrapper',
-			]
+			)
 		);
 	}
 
@@ -96,7 +96,7 @@ class Skin_Classic extends Skin_Base {
 
 		$this->add_control(
 			'equal_grid_height',
-			[
+			array(
 				'label'        => __( 'Equal Posts Height', 'social-elementor' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
@@ -104,10 +104,10 @@ class Skin_Classic extends Skin_Base {
 				'label_off'    => __( 'No', 'social-elementor' ),
 				'label_on'     => __( 'Yes', 'social-elementor' ),
 				'prefix_class' => 'social-blog-post-equal-height-',
-				'condition'    => [
-					$this->get_control_id( 'post_structure' ) => [ 'normal' ],
-				],
-			]
+				'condition'    => array(
+					$this->get_control_id( 'post_structure' ) => array( 'normal' ),
+				),
+			)
 		);
 	}
 

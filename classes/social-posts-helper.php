@@ -31,7 +31,7 @@ class Social_Posts_Helper {
 			'objects'
 		);
 
-		$options = [];
+		$options = array();
 
 		foreach ( $post_types as $post_type ) {
 			$options[ $post_type->name ] = $post_type->label;
@@ -81,7 +81,7 @@ class Social_Posts_Helper {
 		$result = array();
 
 		foreach ( $sizes as $size ) {
-			if ( in_array( $size, array( 'thumbnail', 'medium', 'medium_large', 'large' ) ) ) {
+			if ( in_array( $size, array( 'thumbnail', 'medium', 'medium_large', 'large' ), true ) ) {
 				$result[ $size ] = ucwords( trim( str_replace( array( '-', '_' ), array( ' ', ' ' ), $size ) ) );
 			} else {
 				$result[ $size ] = sprintf(
@@ -118,7 +118,7 @@ class Social_Posts_Helper {
 	public static function get_users() {
 
 		$users     = get_users();
-		$user_list = [];
+		$user_list = array();
 
 		if ( empty( $users ) ) {
 			return $user_list;

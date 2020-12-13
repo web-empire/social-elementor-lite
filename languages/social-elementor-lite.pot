@@ -1,15 +1,15 @@
-# Copyright (C) 2019 WebEmpire
+# Copyright (C) 2020 WebEmpire
 # This file is distributed under the same license as the Social Addons for Elementor (Lite) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Social Addons for Elementor (Lite) 1.0.1\n"
+"Project-Id-Version: Social Addons for Elementor (Lite) 1.1.0\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/social-elementor-lite\n"
-"POT-Creation-Date: 2019-08-06 14:39:07+00:00\n"
+"POT-Creation-Date: 2020-08-02 13:21:47+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: en\n"
@@ -64,7 +64,7 @@ msgstr ""
 msgid "Install Elementor"
 msgstr ""
 
-#: classes/social-config.php:41 modules/blog/skins/skin-base.php:1198
+#: classes/social-config.php:41 modules/blog/skins/skin-base.php:1336
 msgid "Blog"
 msgstr ""
 
@@ -84,7 +84,7 @@ msgstr ""
 msgid "<b class=\"feature\"> 04. </b> Post Sorting Feature"
 msgstr ""
 
-#: classes/social-config.php:53
+#: classes/social-config.php:53 classes/social-config.php:87
 msgid "<b class=\"feature\"> 05. </b> Multiple Design Options"
 msgstr ""
 
@@ -128,6 +128,73 @@ msgstr ""
 msgid "<b class=\"feature\"> 06. </b> Advanced and Extra Customization options"
 msgstr ""
 
+#: classes/social-config.php:77
+msgid "Business Reviews"
+msgstr ""
+
+#: classes/social-config.php:83
+msgid "<b class=\"feature\"> 01. </b> Google Place, Yelp Reviews"
+msgstr ""
+
+#: classes/social-config.php:84
+msgid "<b class=\"feature\"> 02. </b> Built-in Google Schema Support"
+msgstr ""
+
+#: classes/social-config.php:85
+msgid "<b class=\"feature\"> 03. </b> 3 Elegant Default Skins"
+msgstr ""
+
+#: classes/social-config.php:86 classes/social-config.php:104
+msgid "<b class=\"feature\"> 04. </b> Filterable Reviews Options"
+msgstr ""
+
+#: classes/social-config.php:88
+msgid "<b class=\"feature\"> 06. </b> Grid, Carousel Support"
+msgstr ""
+
+#: classes/social-config.php:89 classes/social-config.php:107
+msgid "<b class=\"feature\"> 07. </b> Reviewer Meta Handler"
+msgstr ""
+
+#: classes/social-config.php:90
+msgid ""
+"<b class=\"feature\"> </b> And Much More... <a "
+"href=\"https://webempire.org.in/docs/social-business-reviews-widget/?utm_"
+"source=google&utm_medium=social-post&utm_campaign=social-elementor-plugin\" "
+"target=\"_blank\"> See Here » </a>"
+msgstr ""
+
+#: classes/social-config.php:95
+msgid "Upcoming Social Elements"
+msgstr ""
+
+#: classes/social-config.php:101
+msgid "<b class=\"feature\"> 01. </b> Twitter Posts"
+msgstr ""
+
+#: classes/social-config.php:102
+msgid "<b class=\"feature\"> 02. </b> Facebook Posts"
+msgstr ""
+
+#: classes/social-config.php:103
+msgid "<b class=\"feature\"> 03. </b> Instagram Posts"
+msgstr ""
+
+#: classes/social-config.php:105
+msgid "<b class=\"feature\"> 05. </b> Social Icon Group"
+msgstr ""
+
+#: classes/social-config.php:106
+msgid "<b class=\"feature\"> 06. </b> Much More with Improvements"
+msgstr ""
+
+#: classes/social-config.php:108
+msgid ""
+"<b class=\"feature\"> </b> And Much More... <a "
+"href=\"https://webempire.org.in/contact/?utm_campaign=web-agency&utm_"
+"medium=email&utm_source=google\" target=\"_blank\"> Send a Suggession » </a>"
+msgstr ""
+
 #: classes/social-posts-helper.php:98
 msgid "Full"
 msgstr ""
@@ -164,112 +231,94 @@ msgstr ""
 msgid "Get Pro"
 msgstr ""
 
-#: includes/admin/social-general.php:103
+#: includes/admin/social-general.php:104
+msgid "Get All Features »"
+msgstr ""
+
+#: includes/admin/social-general.php:106
 msgid "See All Features »"
 msgstr ""
 
-#: includes/admin/social-general.php:117
-msgid "Upcoming Social Elements"
+#: includes/admin/social-general.php:122
+msgid "Thanking You!"
 msgstr ""
 
-#: includes/admin/social-general.php:123
-msgid ""
-"Here is the tentative upcoming releases in the Social Elementor.We hope you "
-"like it!!!"
-msgstr ""
-
-#: includes/admin/social-general.php:130
-msgid "Twitter Posts"
-msgstr ""
-
-#: includes/admin/social-general.php:131
-msgid "Facebook Posts"
-msgstr ""
-
-#: includes/admin/social-general.php:132
-msgid "Instagram Posts"
-msgstr ""
-
-#: includes/admin/social-general.php:133
-msgid "Google Reviews Posts"
+#: includes/admin/social-general.php:128
+msgid "Thanks for choosing the Social Addons for Elementor.We hope you like it!!!"
 msgstr ""
 
 #: includes/admin/social-general.php:134
-msgid "Social Connection Button"
+msgid "Could you please do us a BIG favor and give it a 5-star rating on WordPress?"
 msgstr ""
 
-#: includes/admin/social-general.php:135
-msgid "Much More with Improvements"
-msgstr ""
-
-#: includes/admin/social-general.php:152
+#: includes/admin/social-general.php:140
 msgid ""
-"You can contribute to improvise this plugin or can give us suggessions to "
-"make it more better. Your contribution will highly appreciated!"
+"This would boost our motivation and help other users make a comfortable "
+"decision while choosing the Social Elementor."
 msgstr ""
 
-#: includes/admin/social-general.php:157
-msgid "Send a Suggession »"
+#: includes/admin/social-general.php:146
+msgid "Ok, you deserve it »"
 msgstr ""
 
-#: includes/admin/social-general.php:182
+#: includes/admin/social-general.php:160
 #. translators: %1$s: demos link.
 msgid "Visit Demos"
 msgstr ""
 
-#: includes/admin/social-general.php:188
+#: includes/admin/social-general.php:166
 msgid ""
 "Visit here to see our elegant demos for these widgets. We hope you like "
 "it!!!"
 msgstr ""
 
-#: includes/admin/social-general.php:193
+#: includes/admin/social-general.php:171
 msgid "View Demo »"
 msgstr ""
 
-#: includes/admin/social-general.php:208
+#: includes/admin/social-general.php:186
 #. translators: %1$s: demos link.
 msgid "Knowledge Base"
 msgstr ""
 
-#: includes/admin/social-general.php:213
+#: includes/admin/social-general.php:191
 msgid "Not sure how something works? Take a peek at the knowledge base and learn."
 msgstr ""
 
-#: includes/admin/social-general.php:215
+#: includes/admin/social-general.php:193
 msgid "Knowledge Base »"
 msgstr ""
 
-#: includes/admin/social-general.php:221
+#: includes/admin/social-general.php:199
 msgid "Code Snippets"
 msgstr ""
 
-#: includes/admin/social-general.php:226
+#: includes/admin/social-general.php:204
 msgid ""
 "Social Widget's Actions and Filters are listed here, which will help you to "
 "configure custom requirements."
 msgstr ""
 
-#: includes/admin/social-general.php:228
+#: includes/admin/social-general.php:206
 msgid "Actions / Filters »"
 msgstr ""
 
-#: includes/admin/social-general.php:234
+#: includes/admin/social-general.php:212
 msgid "Five Star Support"
 msgstr ""
 
-#: includes/admin/social-general.php:242
+#: includes/admin/social-general.php:220
 #. translators: %1$s: social name.
 msgid ""
 "Got a question? Get in touch with Social & Blog Posts Addons for Elementor "
 "developers. We're happy to help!"
 msgstr ""
 
-#: includes/admin/social-general.php:248
+#: includes/admin/social-general.php:226
 msgid "Get Support »"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:118 modules/blog/skins/skin-base.php:1105
+#: modules/blog/skins/skin-base.php:118 modules/blog/skins/skin-base.php:1243
 #: modules/blog/widgets/blog-base.php:102
 msgid "Layout"
 msgstr ""
@@ -307,23 +356,23 @@ msgid "Link Complete Post Box"
 msgstr ""
 
 #: modules/blog/skins/skin-base.php:184 modules/blog/skins/skin-base.php:370
-#: modules/blog/skins/skin-base.php:627 modules/blog/skins/skin-base.php:1015
+#: modules/blog/skins/skin-base.php:644 modules/blog/skins/skin-base.php:1136
 msgid "Open in New Tab"
 msgstr ""
 
 #: modules/blog/skins/skin-base.php:186 modules/blog/skins/skin-base.php:355
-#: modules/blog/skins/skin-base.php:372 modules/blog/skins/skin-base.php:613
-#: modules/blog/skins/skin-base.php:629 modules/blog/skins/skin-base.php:718
-#: modules/blog/skins/skin-base.php:1017 modules/blog/skins/skin-base.php:1907
+#: modules/blog/skins/skin-base.php:372 modules/blog/skins/skin-base.php:630
+#: modules/blog/skins/skin-base.php:646 modules/blog/skins/skin-base.php:735
+#: modules/blog/skins/skin-base.php:1138 modules/blog/skins/skin-base.php:2046
 #: modules/blog/skins/skin-classic.php:105
 #: modules/blog/skins/skin-event.php:122 modules/blog/widgets/blog-base.php:358
 msgid "Yes"
 msgstr ""
 
 #: modules/blog/skins/skin-base.php:187 modules/blog/skins/skin-base.php:356
-#: modules/blog/skins/skin-base.php:373 modules/blog/skins/skin-base.php:615
-#: modules/blog/skins/skin-base.php:630 modules/blog/skins/skin-base.php:719
-#: modules/blog/skins/skin-base.php:1018 modules/blog/skins/skin-base.php:1908
+#: modules/blog/skins/skin-base.php:373 modules/blog/skins/skin-base.php:632
+#: modules/blog/skins/skin-base.php:647 modules/blog/skins/skin-base.php:736
+#: modules/blog/skins/skin-base.php:1139 modules/blog/skins/skin-base.php:2047
 #: modules/blog/skins/skin-classic.php:104
 #: modules/blog/skins/skin-event.php:121 modules/blog/widgets/blog-base.php:359
 msgid "No"
@@ -399,7 +448,7 @@ msgstr ""
 msgid "Carousel"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:408 modules/blog/skins/skin-base.php:1941
+#: modules/blog/skins/skin-base.php:408 modules/blog/skins/skin-base.php:2080
 msgid "Navigation"
 msgstr ""
 
@@ -407,11 +456,11 @@ msgstr ""
 msgid "Arrows and Dots"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:413 modules/blog/skins/skin-base.php:1953
+#: modules/blog/skins/skin-base.php:413 modules/blog/skins/skin-base.php:2092
 msgid "Arrows"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:414 modules/blog/skins/skin-base.php:2129
+#: modules/blog/skins/skin-base.php:414 modules/blog/skins/skin-base.php:2268
 msgid "Dots"
 msgstr ""
 
@@ -439,7 +488,7 @@ msgstr ""
 msgid "Slides to Scroll"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:502 modules/blog/skins/skin-base.php:1453
+#: modules/blog/skins/skin-base.php:502 modules/blog/skins/skin-base.php:1592
 msgid "Taxonomy Badge"
 msgstr ""
 
@@ -471,327 +520,327 @@ msgstr ""
 msgid "Max Terms to Show"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:555
+#: modules/blog/skins/skin-base.php:556 modules/blog/skins/skin-base.php:571
 msgid "Term Icon"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:566
+#: modules/blog/skins/skin-base.php:583
 msgid "Term Divider"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:592 modules/blog/skins/skin-base.php:599
-#: modules/blog/skins/skin-base.php:1251 modules/blog/widgets/blog-base.php:308
+#: modules/blog/skins/skin-base.php:609 modules/blog/skins/skin-base.php:616
+#: modules/blog/skins/skin-base.php:1389 modules/blog/widgets/blog-base.php:308
 msgid "Title"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:601 modules/blog/skins/skin-base.php:684
-#: modules/blog/skins/skin-base.php:734 modules/blog/skins/skin-base.php:763
-#: modules/blog/skins/skin-base.php:792 modules/blog/skins/skin-base.php:821
-#: modules/blog/skins/skin-base.php:882 modules/blog/skins/skin-base.php:962
-#: modules/blog/skins/skin-base.php:1005
+#: modules/blog/skins/skin-base.php:618 modules/blog/skins/skin-base.php:701
+#: modules/blog/skins/skin-base.php:751 modules/blog/skins/skin-base.php:802
+#: modules/blog/skins/skin-base.php:853 modules/blog/skins/skin-base.php:904
+#: modules/blog/skins/skin-base.php:984 modules/blog/skins/skin-base.php:1083
+#: modules/blog/skins/skin-base.php:1126
 msgid "Show"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:602 modules/blog/skins/skin-base.php:685
-#: modules/blog/skins/skin-base.php:735 modules/blog/skins/skin-base.php:764
-#: modules/blog/skins/skin-base.php:793 modules/blog/skins/skin-base.php:822
-#: modules/blog/skins/skin-base.php:883 modules/blog/skins/skin-base.php:963
-#: modules/blog/skins/skin-base.php:1006
+#: modules/blog/skins/skin-base.php:619 modules/blog/skins/skin-base.php:702
+#: modules/blog/skins/skin-base.php:752 modules/blog/skins/skin-base.php:803
+#: modules/blog/skins/skin-base.php:854 modules/blog/skins/skin-base.php:905
+#: modules/blog/skins/skin-base.php:985 modules/blog/skins/skin-base.php:1084
+#: modules/blog/skins/skin-base.php:1127
 msgid "Hide"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:611
+#: modules/blog/skins/skin-base.php:628
 msgid "Link Title"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:614
+#: modules/blog/skins/skin-base.php:631
 msgid "Uncheck this option, to make the title clickable."
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:643 modules/blog/skins/skin-base.php:694
+#: modules/blog/skins/skin-base.php:660 modules/blog/skins/skin-base.php:711
 msgid "HTML Tag"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:646 modules/blog/skins/skin-base.php:697
+#: modules/blog/skins/skin-base.php:663 modules/blog/skins/skin-base.php:714
 msgid "H1"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:647 modules/blog/skins/skin-base.php:698
+#: modules/blog/skins/skin-base.php:664 modules/blog/skins/skin-base.php:715
 msgid "H2"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:648 modules/blog/skins/skin-base.php:699
+#: modules/blog/skins/skin-base.php:665 modules/blog/skins/skin-base.php:716
 msgid "H3"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:649 modules/blog/skins/skin-base.php:700
+#: modules/blog/skins/skin-base.php:666 modules/blog/skins/skin-base.php:717
 msgid "H4"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:650 modules/blog/skins/skin-base.php:701
+#: modules/blog/skins/skin-base.php:667 modules/blog/skins/skin-base.php:718
 msgid "H5"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:651 modules/blog/skins/skin-base.php:702
+#: modules/blog/skins/skin-base.php:668 modules/blog/skins/skin-base.php:719
 msgid "H6"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:674 modules/blog/skins/skin-base.php:682
-#: modules/blog/skins/skin-base.php:1346
+#: modules/blog/skins/skin-base.php:691 modules/blog/skins/skin-base.php:699
+#: modules/blog/skins/skin-base.php:1484
 msgid "Meta"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:703
+#: modules/blog/skins/skin-base.php:720
 msgid "DIV"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:704
+#: modules/blog/skins/skin-base.php:721
 msgid "SPAN"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:716
+#: modules/blog/skins/skin-base.php:733
 msgid "Link Meta"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:720
+#: modules/blog/skins/skin-base.php:737
 msgid "Uncheck this option, to make the meta clickable."
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:732
+#: modules/blog/skins/skin-base.php:749
 msgid "Show Post Author"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:749
+#: modules/blog/skins/skin-base.php:767 modules/blog/skins/skin-base.php:787
 msgid "Author Icon"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:761
+#: modules/blog/skins/skin-base.php:800
 msgid "Show Post Date"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:778
+#: modules/blog/skins/skin-base.php:819 modules/blog/skins/skin-base.php:838
 msgid "Date Icon"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:790
+#: modules/blog/skins/skin-base.php:851
 msgid "Show Post Comments"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:807
+#: modules/blog/skins/skin-base.php:870 modules/blog/skins/skin-base.php:889
 msgid "Comments Icon"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:819
+#: modules/blog/skins/skin-base.php:902
 msgid "Show Categories"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:836
+#: modules/blog/skins/skin-base.php:919
 msgid "Max Categories"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:851
+#: modules/blog/skins/skin-base.php:935 modules/blog/skins/skin-base.php:952
 msgid "Category Icon"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:863
+#: modules/blog/skins/skin-base.php:965
 msgid "Category Divider"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:880
+#: modules/blog/skins/skin-base.php:982
 msgid "Show Tags"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:897
+#: modules/blog/skins/skin-base.php:999
 msgid "Max Tags"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:912
+#: modules/blog/skins/skin-base.php:1015 modules/blog/skins/skin-base.php:1032
 msgid "Tag Icon"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:924
+#: modules/blog/skins/skin-base.php:1045
 msgid "Tag Divider"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:952 modules/blog/skins/skin-base.php:1653
+#: modules/blog/skins/skin-base.php:1073 modules/blog/skins/skin-base.php:1792
 msgid "Excerpt"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:960
+#: modules/blog/skins/skin-base.php:1081
 msgid "Short Excerpt"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:972
+#: modules/blog/skins/skin-base.php:1093
 msgid "Excerpt Length"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:995 modules/blog/skins/skin-base.php:1003
-#: modules/blog/skins/skin-base.php:1725
+#: modules/blog/skins/skin-base.php:1116 modules/blog/skins/skin-base.php:1124
+#: modules/blog/skins/skin-base.php:1864
 msgid "Call To Action"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1030
+#: modules/blog/skins/skin-base.php:1151
 msgid "Text"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1032
+#: modules/blog/skins/skin-base.php:1153
 msgid "Read More"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1042
+#: modules/blog/skins/skin-base.php:1165 modules/blog/skins/skin-base.php:1179
 msgid "Icon"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1054
+#: modules/blog/skins/skin-base.php:1192
 msgid "Icon Position"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1058
+#: modules/blog/skins/skin-base.php:1196
 msgid "Before"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1059
+#: modules/blog/skins/skin-base.php:1197
 msgid "After"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1070
+#: modules/blog/skins/skin-base.php:1208
 msgid "Icon Spacing"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1113
+#: modules/blog/skins/skin-base.php:1251
 msgid "Columns Gap"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1137
+#: modules/blog/skins/skin-base.php:1275
 msgid "Rows Gap"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1160 modules/blog/skins/skin-base.php:1501
-#: modules/blog/skins/skin-base.php:1531
+#: modules/blog/skins/skin-base.php:1298 modules/blog/skins/skin-base.php:1640
+#: modules/blog/skins/skin-base.php:1670
 msgid "Alignment"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1165 modules/blog/skins/skin-base.php:1506
-#: modules/blog/skins/skin-base.php:1536 modules/blog/skins/skin-card.php:268
+#: modules/blog/skins/skin-base.php:1303 modules/blog/skins/skin-base.php:1645
+#: modules/blog/skins/skin-base.php:1675 modules/blog/skins/skin-card.php:268
 msgid "Left"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1169 modules/blog/skins/skin-base.php:1510
+#: modules/blog/skins/skin-base.php:1307 modules/blog/skins/skin-base.php:1649
 #: modules/blog/skins/skin-card.php:272
 msgid "Center"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1173 modules/blog/skins/skin-base.php:1514
-#: modules/blog/skins/skin-base.php:1540 modules/blog/skins/skin-card.php:276
+#: modules/blog/skins/skin-base.php:1311 modules/blog/skins/skin-base.php:1653
+#: modules/blog/skins/skin-base.php:1679 modules/blog/skins/skin-card.php:276
 msgid "Right"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1206 modules/blog/skins/skin-base.php:1595
-#: modules/blog/skins/skin-base.php:1767 modules/blog/skins/skin-base.php:2031
+#: modules/blog/skins/skin-base.php:1344 modules/blog/skins/skin-base.php:1734
+#: modules/blog/skins/skin-base.php:1906 modules/blog/skins/skin-base.php:2170
 #: modules/blog/skins/skin-event.php:323
 msgid "Background Color"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1218 modules/blog/skins/skin-base.php:1464
-#: modules/blog/skins/skin-base.php:1883
+#: modules/blog/skins/skin-base.php:1356 modules/blog/skins/skin-base.php:1603
+#: modules/blog/skins/skin-base.php:2022
 msgid "Padding"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1262 modules/blog/skins/skin-base.php:1357
-#: modules/blog/skins/skin-base.php:1558 modules/blog/skins/skin-base.php:1664
+#: modules/blog/skins/skin-base.php:1400 modules/blog/skins/skin-base.php:1495
+#: modules/blog/skins/skin-base.php:1697 modules/blog/skins/skin-base.php:1803
 #: modules/blog/skins/skin-event.php:311
 msgid "Color"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1281 modules/blog/skins/skin-base.php:1576
-#: modules/blog/skins/skin-base.php:2055
+#: modules/blog/skins/skin-base.php:1419 modules/blog/skins/skin-base.php:1715
+#: modules/blog/skins/skin-base.php:2194
 msgid "Hover Color"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1312 modules/blog/skins/skin-base.php:1401
-#: modules/blog/skins/skin-base.php:1619 modules/blog/skins/skin-base.php:1691
+#: modules/blog/skins/skin-base.php:1450 modules/blog/skins/skin-base.php:1540
+#: modules/blog/skins/skin-base.php:1758 modules/blog/skins/skin-base.php:1830
 #: modules/blog/skins/skin-card.php:227
 msgid "Bottom Spacing"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1369
+#: modules/blog/skins/skin-base.php:1508
 msgid "Link Color"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1380
+#: modules/blog/skins/skin-base.php:1519
 msgid "Link Hover Color"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1421
+#: modules/blog/skins/skin-base.php:1560
 msgid "Inter Meta Spacing"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1486 modules/blog/skins/skin-base.php:1860
-#: modules/blog/skins/skin-base.php:2107
+#: modules/blog/skins/skin-base.php:1625 modules/blog/skins/skin-base.php:1999
+#: modules/blog/skins/skin-base.php:2246
 msgid "Border Radius"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1738 modules/blog/skins/skin-base.php:2003
+#: modules/blog/skins/skin-base.php:1877 modules/blog/skins/skin-base.php:2142
 msgid "Normal"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1748
+#: modules/blog/skins/skin-base.php:1887
 msgid "Text Color"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1787
+#: modules/blog/skins/skin-base.php:1926
 msgid "Border"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1800 modules/blog/skins/skin-base.php:2046
+#: modules/blog/skins/skin-base.php:1939 modules/blog/skins/skin-base.php:2185
 msgid "Hover"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1810
+#: modules/blog/skins/skin-base.php:1949
 msgid "Text Hover Color"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1825 modules/blog/skins/skin-base.php:2070
+#: modules/blog/skins/skin-base.php:1964 modules/blog/skins/skin-base.php:2209
 msgid "Background Hover Color"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1841
+#: modules/blog/skins/skin-base.php:1980
 msgid "Border Hover Color"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1905
+#: modules/blog/skins/skin-base.php:2044
 msgid "Full Width"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1965
+#: modules/blog/skins/skin-base.php:2104
 msgid "Position"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1969
+#: modules/blog/skins/skin-base.php:2108
 msgid "Inside"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1970
+#: modules/blog/skins/skin-base.php:2109
 msgid "Outside"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:1982
+#: modules/blog/skins/skin-base.php:2121
 msgid "Arrows Size"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:2012
+#: modules/blog/skins/skin-base.php:2151
 msgid "Arrows Color"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:2086
+#: modules/blog/skins/skin-base.php:2225
 msgid "Arrows Border Size"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:2141
+#: modules/blog/skins/skin-base.php:2280
 msgid "Dots Size"
 msgstr ""
 
-#: modules/blog/skins/skin-base.php:2161
+#: modules/blog/skins/skin-base.php:2300
 msgid "Dots Color"
 msgstr ""
 
@@ -855,9 +904,9 @@ msgstr ""
 msgid "Date Box Size"
 msgstr ""
 
-#: modules/blog/template-blocks/skin-style.php:1033
-#: modules/blog/template-blocks/skin-style.php:1041
-#: modules/blog/template-blocks/skin-style.php:1044
+#: modules/blog/template-blocks/skin-style.php:1130
+#: modules/blog/template-blocks/skin-style.php:1138
+#: modules/blog/template-blocks/skin-style.php:1141
 msgid "All"
 msgstr ""
 

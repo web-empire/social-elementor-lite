@@ -127,13 +127,13 @@ class Build_Post_Query {
 
 		$post_type = ( isset( $settings['post_type_filter'] ) && '' != $settings['post_type_filter'] ) ? $settings['post_type_filter'] : 'post';
 
-		$query_args = [
+		$query_args = array(
 			'post_type'        => $post_type,
 			'posts_per_page'   => ( '' == $settings[ $control_id . 'posts_per_page' ] ) ? -1 : $settings[ $control_id . 'posts_per_page' ],
 			'paged'            => $paged,
 			'post_status'      => 'publish',
 			'suppress_filters' => false,
-		];
+		);
 
 		$query_args['orderby']             = $settings['orderby'];
 		$query_args['order']               = $settings['order'];
@@ -161,12 +161,12 @@ class Build_Post_Query {
 
 					$operator = $settings[ $index . '_' . $post_type . '_filter_rule' ];
 
-					$query_args['tax_query'][] = [
+					$query_args['tax_query'][] = array(
 						'taxonomy' => $index,
 						'field'    => 'slug',
 						'terms'    => $settings[ 'tax_' . $index . '_' . $post_type . '_filter' ],
 						'operator' => $operator,
-					];
+					);
 				}
 			}
 

@@ -24,8 +24,8 @@ if ( empty( $post ) ) {
 
 	<div class="social-blog-post-bg-wrapper">
 
-		<?php if ( 'yes' == $this->get_instance_value( 'link_complete_box' ) ) { ?>
-			<a href="<?php the_permalink(); ?>" target="<?php echo ( 'yes' == $this->get_instance_value( 'link_complete_box_tab' ) ) ? '_blank' : '_self'; ?>" class="social-blog-post-complete-box-overlay"></a>
+		<?php if ( 'yes' === $this->get_instance_value( 'link_complete_box' ) ) { ?>
+			<a href="<?php the_permalink(); ?>" target="<?php echo ( 'yes' === $this->get_instance_value( 'link_complete_box_tab' ) ) ? '_blank' : '_self'; ?>" class="social-blog-post-complete-box-overlay"></a>
 		<?php } ?>
 		<?php do_action( 'social_elementor_single_post_before_inner_wrap', get_the_ID(), $settings ); ?>
 

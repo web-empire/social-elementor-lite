@@ -7,7 +7,7 @@
 
 use SocialElementor\Classes\Social_Helper;
 
-$widgets       = Social_Helper::get_widget_options();
+$widgets = Social_Helper::get_widget_options();
 
 $kb_url = apply_filters( 'social_knowledge_base_link', 'https://webempire.org.in/docs/?utm_source=google&utm_medium=social-post&utm_campaign=social-elementor-plugin' );
 
@@ -57,7 +57,7 @@ $code_doc_url = apply_filters( 'social_code_snippets_link', 'https://webempire.o
 										);
 									}
 
-									$features = '';
+									$features  = '';
 									$features .= '<div class="social-widget-features">';
 									$features .= '<p class="widget-feature">' . $info['features']['first'] . '</p>';
 									$features .= '<p class="widget-feature">' . $info['features']['second'] . '</p>';
@@ -68,12 +68,12 @@ $code_doc_url = apply_filters( 'social_code_snippets_link', 'https://webempire.o
 									$features .= '<p class="widget-feature">' . $info['features']['seventh'] . '</p>';
 									$features .= '</div>';
 
-									echo '<li id="' . esc_attr( $addon ) . '"  class="social-widget-wrapper ' . esc_attr( $class ) . '">';
+									echo '<li id="' . esc_attr( $addon ) . '"  class="' . esc_attr( ( $info['is_pro'] ) ? 'is-pro-addon' : ' ' ) . ' social-widget-wrapper ' . esc_attr( $class ) . '">';
 									echo '<h3> <a class="social-widget-title"' . $doc_url . $anchor_target . ' >' . esc_html( $info['title'] ) . '</a>';
 
 									if ( $info['is_pro'] ) {
 
-										$pro_url = 'http://codecanyon.net/item/social-addons-for-elementor-pro/24234889';
+										$pro_url   = 'http://codecanyon.net/item/social-addons-for-elementor-pro/24234889';
 										$pro_label = esc_html__( 'Get Pro', 'social-elementor' );
 
 										printf(
@@ -100,7 +100,12 @@ $code_doc_url = apply_filters( 'social_code_snippets_link', 'https://webempire.o
 										);
 									}
 
-									echo '</h3> <div class="social-widget-link-wrapper"> <h4 class="see-all-features">' . esc_html__( 'See All Features »', 'social-elementor' ) . '</h4>';
+									if ( 'social-upcoming-elements' === $info['slug'] ) {
+										echo '</h3> <div class="social-widget-link-wrapper"> <h4 class="see-all-features">' . esc_html__( 'Get All Features »', 'social-elementor' ) . '</h4>';
+									} else {
+										echo '</h3> <div class="social-widget-link-wrapper"> <h4 class="see-all-features">' . esc_html__( 'See All Features »', 'social-elementor' ) . '</h4>';
+									}
+
 									echo wp_kses_post( $features );
 									echo '</div></li>';
 								}
@@ -114,55 +119,119 @@ $code_doc_url = apply_filters( 'social_code_snippets_link', 'https://webempire.o
 			<div id="side-sortables">
 				<div class="postbox">
 					<h2 class="hndle social-normal-cusror">
-						<span><?php esc_html_e( 'Upcoming Social Elements', 'social-elementor' ); ?></span>
-						<span class="dashicons dashicons-share"></span>
+						<span><?php esc_html_e( 'Thanking You!', 'social-elementor' ); ?></span>
+						<span class="dashicons dashicons-megaphone"></span>
 					</h2>
 					<div class="inside">
 						<p>
 							<?php
-							esc_html_e( 'Here is the tentative upcoming releases in the Social Elementor.We hope you like it!!!', 'social-elementor' );
+							esc_html_e( 'Thanks for choosing the Social Addons for Elementor.We hope you like it!!!', 'social-elementor' );
 							?>
 						</p>
-						
+
+						<p>
+							<?php
+							esc_html_e( 'Could you please do us a BIG favor and give it a 5-star rating on WordPress?', 'social-elementor' );
+							?>
+						</p>
+
+						<p>
+							<?php
+							esc_html_e( 'This would boost our motivation and help other users make a comfortable decision while choosing the Social Elementor.', 'social-elementor' );
+							?>
+						</p>
+
 						<?php
+						$review_asked       = apply_filters( 'review_asking', 'https://wordpress.org/support/plugin/social-elementor-lite/reviews/#new-post' );
+						$review_rating_text = apply_filters( 'review_asking_text', __( 'Ok, you deserve it »', 'social-elementor' ) );
 
-							$upcoming_widgets	= array (
-								'first'		=>	esc_html__( 'Twitter Posts', 'social-elementor' ),
-								'second'	=>	esc_html__( 'Facebook Posts', 'social-elementor' ),
-								'third'		=>	esc_html__( 'Instagram Posts', 'social-elementor' ),
-								'fourth'	=>	esc_html__( 'Google Reviews Posts', 'social-elementor' ),
-								'fifth'		=>	esc_html__( 'Social Connection Button', 'social-elementor' ),
-								'sixth'		=>	esc_html__( 'Much More with Improvements', 'social-elementor' ),
-							);
+						printf(
+							/* translators: %1$s: demos link. */
+							'%1$s',
+							! empty( $review_asked ) ? '<a href=' . esc_url( $review_asked ) . ' target="_blank" rel="noopener">' . esc_html( $review_rating_text ) . '</a>' :
+							esc_html( $review_rating_text )
+						);
+						?>
+					</div>
+				</div>
 
-							$features = '';
-							$features .= '<div class="social-widget-features">';
-							$features .= '<p class="widget-feature"><b class="feature"> 01. </b>' . $upcoming_widgets['first'] . '</p>';
-							$features .= '<p class="widget-feature"><b class="feature"> 02. </b>' . $upcoming_widgets['second'] . '</p>';
-							$features .= '<p class="widget-feature"><b class="feature"> 03. </b>' . $upcoming_widgets['third'] . '</p>';
-							$features .= '<p class="widget-feature"><b class="feature"> 04. </b>' . $upcoming_widgets['fourth'] . '</p>';
-							$features .= '<p class="widget-feature"><b class="feature"> 05. </b>' . $upcoming_widgets['fifth'] . '</p>';
-							$features .= '<p class="widget-feature"><b class="feature"> </b>' . $upcoming_widgets['sixth'] . '</p>';
-							$features .= '</div>';
+				<div class="postbox">
+					<h2 class="hndle social-normal-cusror">
+						<span><?php esc_html_e( 'Visit Demos', 'social-elementor' ); ?></span>
+						<span class="dashicons dashicons-welcome-view-site"></span>
+					</h2>
+					<div class="inside">
+						<p>
+							<?php
+							esc_html_e( 'Visit here to see our elegant demos for these widgets. We hope you like it!!!', 'social-elementor' );
+							?>
+						</p>
+							<?php
+								$visit_demos      = apply_filters( 'visit_demos', 'https://webempire.org.in/our-products/social-add-ons-for-elementor/?utm_source=google&utm_medium=social-post&utm_campaign=social-elementor-plugin' );
+								$visit_demos_text = apply_filters( 'visit_demos_text', esc_html__( 'View Demo »', 'social-elementor' ) );
 
-							echo $features; ?>
-
-							<p>
-								<?php
-								esc_html_e( 'You can contribute to improvise this plugin or can give us suggessions to make it more better. Your contribution will highly appreciated!', 'social-elementor' );
+								printf(
+									/* translators: %1$s: demos link. */
+									'%1$s',
+									! empty( $visit_demos ) ? '<a href=' . esc_url( $visit_demos ) . ' target="_blank" rel="noopener">' . esc_html( $visit_demos_text ) . '</a>' :
+									esc_html( $visit_demos_text )
+								);
 								?>
-							</p>
+						</p>
+					</div>
+				</div>
 
-							<?php $contribute_suggession      = apply_filters( 'contribute_suggession', 'https://webempire.org.in/contact/?utm_campaign=web-agency&utm_medium=email&utm_source=google' );
-							$contribute_suggession_text = apply_filters( 'contribute_suggession_text', __( 'Send a Suggession »', 'social-elementor' ) );
+				<div class="postbox">
+					<h2 class="hndle social-normal-cusror">
+						<span><?php esc_html_e( 'Knowledge Base', 'social-elementor' ); ?></span>
+						<span class="dashicons dashicons-book"></span>
+					</h2>
+					<div class="inside">
+						<p>
+							<?php esc_html_e( 'Not sure how something works? Take a peek at the knowledge base and learn.', 'social-elementor' ); ?>
+						</p>
+						<a href='<?php echo esc_url( $kb_url ); ?> ' target="_blank" rel="noopener"><?php esc_attr_e( 'Knowledge Base »', 'social-elementor' ); ?></a>
+					</div>
+				</div>
+
+				<div class="postbox">
+					<h2 class="hndle social-normal-cusror">
+						<span><?php esc_html_e( 'Code Snippets', 'social-elementor' ); ?></span>
+						<span class="dashicons dashicons-editor-code"></span>
+					</h2>
+					<div class="inside">
+						<p>
+							<?php esc_html_e( 'Social Widget\'s Actions and Filters are listed here, which will help you to configure custom requirements.', 'social-elementor' ); ?>
+						</p>
+						<a href='<?php echo esc_url( $code_doc_url ); ?> ' target="_blank" rel="noopener"><?php esc_attr_e( 'Actions / Filters »', 'social-elementor' ); ?></a>
+					</div>
+				</div>
+
+				<div class="postbox">
+					<h2 class="hndle social-normal-cusror">
+						<span><?php esc_html_e( 'Five Star Support', 'social-elementor' ); ?></span>
+						<span class="dashicons dashicons-awards"></span>
+					</h2>
+					<div class="inside">
+						<p>
+							<?php
+							printf(
+								/* translators: %1$s: social name. */
+								esc_html_e( 'Got a question? Get in touch with Social & Blog Posts Addons for Elementor developers. We\'re happy to help!', 'social-elementor' )
+							);
+							?>
+						</p>
+						<?php
+							$social_support_link      = apply_filters( 'social_support_link', 'https://webempire.org.in/support/?utm_source=google&utm_medium=email&utm_campaign=social-elementor-plugin' );
+							$social_support_link_text = apply_filters( 'social_support_link_text', esc_html__( 'Get Support »', 'social-elementor' ) );
 
 							printf(
-								/* translators: %1$s: demos link. */
+								/* translators: %1$s: social support link. */
 								'%1$s',
-								! empty( $contribute_suggession ) ? '<a href=' . esc_url( $contribute_suggession ) . ' target="_blank" rel="noopener">' . esc_html( $contribute_suggession_text ) . '</a>' :
-								esc_html( $contribute_suggession_text )
+								! empty( $social_support_link ) ? '<a href=' . esc_url( $social_support_link ) . ' target="_blank" rel="noopener">' . esc_html( $social_support_link_text ) . '</a>' :
+								esc_html( $social_support_link_text )
 							);
-						?>
+							?>
 					</div>
 				</div>
 			</div>
@@ -172,93 +241,3 @@ $code_doc_url = apply_filters( 'social_code_snippets_link', 'https://webempire.o
 	<br class="clear"/>
 </div>
 
-<div class="social-container social-connect">
-	<div id="poststuff">
-		<div id="post-body" class="columns-2">
-			<div id="post-body-content">
-				<div id="side-sortables">
-					<div class="postbox">
-						<h2 class="hndle social-normal-cusror">
-							<span><?php esc_html_e( 'Visit Demos', 'social-elementor' ); ?></span>
-							<span class="dashicons dashicons-welcome-view-site"></span>
-						</h2>
-						<div class="inside">
-							<p>
-								<?php
-								esc_html_e( 'Visit here to see our elegant demos for these widgets. We hope you like it!!!', 'social-elementor' );
-								?>
-							</p>
-								<?php
-									$visit_demos      = apply_filters( 'visit_demos', 'https://webempire.org.in/social-posts/?utm_source=google&utm_medium=social-post&utm_campaign=social-elementor-plugin' );
-									$visit_demos_text = apply_filters( 'visit_demos_text', esc_html__( 'View Demo »', 'social-elementor' ) );
-
-									printf(
-										/* translators: %1$s: demos link. */
-										'%1$s',
-										! empty( $visit_demos ) ? '<a href=' . esc_url( $visit_demos ) . ' target="_blank" rel="noopener">' . esc_html( $visit_demos_text ) . '</a>' :
-										esc_html( $visit_demos_text )
-									);
-								?>
-							</p>
-						</div>
-					</div>
-
-					<div class="postbox">
-						<h2 class="hndle social-normal-cusror">
-							<span><?php esc_html_e( 'Knowledge Base', 'social-elementor' ); ?></span>
-							<span class="dashicons dashicons-book"></span>
-						</h2>
-						<div class="inside">
-							<p>
-								<?php esc_html_e( 'Not sure how something works? Take a peek at the knowledge base and learn.', 'social-elementor' ); ?>
-							</p>
-							<a href='<?php echo esc_url( $kb_url ); ?> ' target="_blank" rel="noopener"><?php esc_attr_e( 'Knowledge Base »', 'social-elementor' ); ?></a>
-						</div>
-					</div>
-
-					<div class="postbox">
-						<h2 class="hndle social-normal-cusror">
-							<span><?php esc_html_e( 'Code Snippets', 'social-elementor' ); ?></span>
-							<span class="dashicons dashicons-editor-code"></span>
-						</h2>
-						<div class="inside">
-							<p>
-								<?php esc_html_e( 'Social Widget\'s Actions and Filters are listed here, which will help you to configure custom requirements.', 'social-elementor' ); ?>
-							</p>
-							<a href='<?php echo esc_url( $code_doc_url ); ?> ' target="_blank" rel="noopener"><?php esc_attr_e( 'Actions / Filters »', 'social-elementor' ); ?></a>
-						</div>
-					</div>
-
-						<div class="postbox">
-							<h2 class="hndle social-normal-cusror">
-								<span><?php esc_html_e( 'Five Star Support', 'social-elementor' ); ?></span>
-								<span class="dashicons dashicons-awards"></span>
-							</h2>
-							<div class="inside">
-								<p>
-									<?php
-									printf(
-										/* translators: %1$s: social name. */
-										esc_html_e( 'Got a question? Get in touch with Social & Blog Posts Addons for Elementor developers. We\'re happy to help!', 'social-elementor' )
-									);
-									?>
-								</p>
-								<?php
-									$social_support_link      = apply_filters( 'social_support_link', 'https://webempire.org.in/support/?utm_source=google&utm_medium=email&utm_campaign=social-elementor-plugin' );
-									$social_support_link_text = apply_filters( 'social_support_link_text', esc_html__( 'Get Support »', 'social-elementor' ) );
-
-									printf(
-										/* translators: %1$s: social support link. */
-										'%1$s',
-										! empty( $social_support_link ) ? '<a href=' . esc_url( $social_support_link ) . ' target="_blank" rel="noopener">' . esc_html( $social_support_link_text ) . '</a>' :
-										esc_html( $social_support_link_text )
-									);
-								?>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>

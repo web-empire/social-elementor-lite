@@ -49,7 +49,6 @@ class Blog extends Blog_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		// return parent::get_widget_icon( 'Blog' );
 		return 'eicon-gallery-grid';
 	}
 
@@ -101,7 +100,7 @@ class Blog extends Blog_Base {
 
 		$query_args = self::get_query_posts( $skin_id, $this->get_settings() );
 
-		$query_args['posts_per_page'] = ( '' == $this->get_current_skin()->get_instance_value( 'posts_per_page' ) ) ? -1 : $this->get_current_skin()->get_instance_value( 'posts_per_page' );
+		$query_args['posts_per_page'] = ( '' === $this->get_current_skin()->get_instance_value( 'posts_per_page' ) ) ? -1 : $this->get_current_skin()->get_instance_value( 'posts_per_page' );
 		$query_args['paged']          = $this->get_paged();
 
 		return ( $query_args );
@@ -119,25 +118,25 @@ class Blog extends Blog_Base {
 	 */
 	public static function get_query_posts( $control_id, $settings ) {
 
-		if ( '' != $control_id ) {
+		if ( '' !== $control_id ) {
 			$control_id = $control_id . '_';
 		}
 
 		$paged = self::get_paged();
 
-		$post_type = ( isset( $settings['post_type_filter'] ) && '' != $settings['post_type_filter'] ) ? $settings['post_type_filter'] : 'post';
+		$post_type = ( isset( $settings['post_type_filter'] ) && '' !== $settings['post_type_filter'] ) ? $settings['post_type_filter'] : 'post';
 
-		$query_args = [
+		$query_args = array(
 			'post_type'        => $post_type,
-			'posts_per_page'   => ( '' == $settings[ $control_id . 'posts_per_page' ] ) ? -1 : $settings[ $control_id . 'posts_per_page' ],
+			'posts_per_page'   => ( '' === $settings[ $control_id . 'posts_per_page' ] ) ? -1 : $settings[ $control_id . 'posts_per_page' ],
 			'paged'            => $paged,
 			'post_status'      => 'publish',
 			'suppress_filters' => false,
-		];
+		);
 
 		$query_args['orderby']             = $settings['orderby'];
 		$query_args['order']               = $settings['order'];
-		$query_args['ignore_sticky_posts'] = ( isset( $settings['ignore_sticky_posts'] ) && 'yes' == $settings['ignore_sticky_posts'] ) ? 1 : 0;
+		$query_args['ignore_sticky_posts'] = ( isset( $settings['ignore_sticky_posts'] ) && 'yes' === $settings['ignore_sticky_posts'] ) ? 1 : 0;
 
 		if ( ! empty( $settings['post_filter'] ) ) {
 
@@ -161,12 +160,12 @@ class Blog extends Blog_Base {
 
 					$operator = $settings[ $index . '_filter_rule' ];
 
-					$query_args['tax_query'][] = [
+					$query_args['tax_query'][] = array(
 						'taxonomy' => $index,
 						'field'    => 'slug',
 						'terms'    => $settings[ 'tax_' . $index . '_filter' ],
 						'operator' => $operator,
-					];
+					);
 				}
 			}
 		}
@@ -184,7 +183,7 @@ class Blog extends Blog_Base {
 
 		$settings = $this->get_settings();
 
-		if ( 'main' == $settings['query_type'] ) {
+		if ( 'main' === $settings['query_type'] ) {
 
 			global $wp_query;
 

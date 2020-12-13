@@ -29,7 +29,7 @@ use SocialElementor\Classes\Social_Helper;
 
 		<?php
 		// Settings update message.
-		if ( isset( $_REQUEST['message'] ) && ( 'saved' == $_REQUEST['message'] || 'saved_ext' == $_REQUEST['message'] ) ) {
+		if ( isset( $_REQUEST['message'] ) && ( 'saved' === $_REQUEST['message'] || 'saved_ext' === $_REQUEST['message'] ) ) {
 			?>
 				<div id="message" class="notice notice-success is-dismissive social-notice"><p> <?php esc_html_e( 'Settings saved successfully.', 'social-elementor' ); ?> </p></div>
 			<?php

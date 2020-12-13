@@ -74,8 +74,8 @@ class Social_Elementor_Core {
 		if ( ! class_exists( $class_to_load ) ) {
 			$filename = strtolower(
 				preg_replace(
-					[ '/^' . __NAMESPACE__ . '\\\/', '/([a-z])([A-Z])/', '/_/', '/\\\/' ],
-					[ '', '$1-$2', '-', DIRECTORY_SEPARATOR ],
+					array( '/^' . __NAMESPACE__ . '\\\/', '/([a-z])([A-Z])/', '/_/', '/\\\/' ),
+					array( '', '$1-$2', '-', DIRECTORY_SEPARATOR ),
 					$class_to_load
 				)
 			);
@@ -139,7 +139,7 @@ class Social_Elementor_Core {
 
 		$this->init_category();
 
-		do_action( 'social_elementor/init' );
+		do_action( 'social_elementor_init' );
 	}
 
 	/**
@@ -152,10 +152,10 @@ class Social_Elementor_Core {
 
 		$this_cat->add_category(
 			'social-elements',
-			[
+			array(
 				'title' => SOCIAL_ELEMENTOR_CATEGORY,
 				'icon'  => 'eicon-font',
-			]
+			)
 		);
 
 		return $this_cat;
@@ -173,9 +173,9 @@ class Social_Elementor_Core {
 
 		\Elementor\Plugin::instance()->elements_manager->add_category(
 			'social-elements',
-			[
+			array(
 				'title' => SOCIAL_ELEMENTOR_CATEGORY,
-			],
+			),
 			1
 		);
 	}
@@ -187,15 +187,15 @@ class Social_Elementor_Core {
 	 */
 	function register_widget_scripts() {
 
-		$js_files    = Social_Helper::get_widget_script();
+		$js_files = Social_Helper::get_widget_script();
 
 		wp_localize_script(
 			'jquery',
 			'social_elementor_script',
 			array(
-				'post_loader'        => SOCIAL_ELEMENTOR_URL . 'assets/img/post-loader.gif',
-				'url'                => admin_url( 'admin-ajax.php' ),
-				'search_str'         => esc_html__( 'Search:', 'social-elementor' ),
+				'post_loader' => SOCIAL_ELEMENTOR_URL . 'assets/img/post-loader.gif',
+				'url'         => admin_url( 'admin-ajax.php' ),
+				'search_str'  => esc_html__( 'Search:', 'social-elementor' ),
 			)
 		);
 
