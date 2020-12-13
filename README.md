@@ -3,8 +3,8 @@
 **Tags:** elementor, blog elementor, posts addon elementor   
 **Requires at least:** 4.7  
 **Requires PHP:** 5.4  
-**Tested up to:** 5.4.2  
-**Stable tag:** 1.1.0  
+**Tested up to:** 5.6  
+**Stable tag:** 1.2.0  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -21,6 +21,7 @@ As this is a initial version it has a free and amazing widget:
 <ul>
  	<li> <strong> Post Grid </strong> The Post Grid block fetches the blog posts you may have on your website and displays them in a grid layout. You can customize the order of your posts, and manage settings like the featured image, content, custom query etc.</li>
  	<li> <strong> Post Masonry </strong> The Post Masonry block fetches the blog posts on your website and displays them in a masonry layout. You can customize the way your posts look and manage settings like the featured image, the content you want to display, etc.</li>
+  <li> <strong> Social Icons </strong> The Post Masonry block fetches the blog posts on your website and displays them in a masonry layout. You can customize the way your posts look and manage settings like the featured image, the content you want to display, etc.</li>
 </ul>
 
 <strong> Many More Blocks Coming Soon! </strong>
@@ -55,6 +56,12 @@ As this is a initial version it has a free and amazing widget:
   <li> Social Business Reviews - Layouts: Grid / Carousel </li>
   <li> Social Business Reviews - Built-in Schema support – Service / Place / Organization schema support to boost and rank your site </li>
   <li> Social Business Reviews - Amazing customizing options – Spacing, Typography, Color, Styling controls </li>
+  <li> Developer-friendly </li>
+  <li> Social Icons - Outstanding Controls – Having social icon/text support. </li>
+  <li> Developer-friendly </li>
+  <li> Social Icons - Separater support </li>
+  <li> Developer-friendly </li>
+  <li> Social Icons - Elegant animations supported for social links. </li>
   <li> Developer-friendly </li>
   <li> And of-course much more..! </li>
 </ul>
@@ -95,3 +102,6 @@ You may now contribute to the plugin on Github: <a href="https://github.com/web-
 - Fix: After Icon Position not working in Blog Widget.
 - Fix: 404 console errors for missing CSS assets files.
 - Tweak: Admin page design Improvement.
+
+### 1.2.0 ###
+- New: Social Icons.

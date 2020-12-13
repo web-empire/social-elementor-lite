@@ -1,3 +1,6 @@
+Version 1.0.0 - Sunday, 12th December 2020
+- New: Introduced Social Icons
+
 Version 1.1.0 - Sunday, 02nd July 2020
 - Improvement: Provided Font Awesome 5 Icons and SVG support.
 - Improvement: Filter to update CTA Read More text from Blog widget - ('social_blog_post_cta_text')
