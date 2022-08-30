@@ -7,7 +7,7 @@
     "test": "test"
   },
   "dependencies": {
-    "moment-timezone": "^0.5.17",
+    "moment-timezone": "^0.5.35",
     "node-minify": "^3.6.0"
   },
   "devDependencies": {
